@@ -1,0 +1,1830 @@
+\documentclass[12pt,letterpaper]{report}
+\usepackage{proyecto-grado}
+
+% =====================================================
+% Datos del proyecto: edite esta sección
+% =====================================================
+\tituloProyecto{Título del Proyecto de Grado}
+\programa{Ingeniería Mecatrónica}
+\directorProyecto{Nombre del Director}
+\autorProyecto{Nombre del Estudiante 1}
+\autorDosProyecto{Nombre del Estudiante 2}
+
+\begin{document}
+
+\hypersetup{pageanchor=false}
+\portada
+\hypersetup{pageanchor=true}
+
+
+\iniciarPaginasCapstone
+\tituloPreliminar{Ficha Técnica}
+\addcontentsline{toc}{chapter}{Ficha Técnica}
+
+\vspace{0.4cm}
+
+\begingroup
+\setstretch{1}
+\normalfont\footnotesize
+\setlength{\tabcolsep}{3pt}
+\renewcommand{\arraystretch}{1.05}
+\begin{tablaCentrada}
+\begin{tabularx}{\textwidth}{>{\raggedright\arraybackslash}p{0.30\textwidth}>{\raggedright\arraybackslash}p{0.15\textwidth}>{\raggedright\arraybackslash}X}
+  \toprule
+  \tablaEncabezado
+  \tablaHeader{Título }  & \multicolumn{2}{>{\raggedright\arraybackslash}p{\dimexpr0.70\textwidth-4\tabcolsep\relax}}{\tablaHeader{\thesistitle}} \\
+  \midrule
+  \textbf{Programa académico} & \multicolumn{2}{>{\raggedright\arraybackslash}p{\dimexpr0.70\textwidth-4\tabcolsep\relax}}{\thesisprogram} \\
+  \midrule
+  \textbf{Código y vigencia del formato} & \multicolumn{2}{>{\raggedright\arraybackslash}p{\dimexpr0.70\textwidth-4\tabcolsep\relax}}{FR-IEI-45-V4; vigencia 09/06/2026} \\
+  \midrule
+  \textbf{Asesor} & Nombre & \thesisadvisor \\
+  \cmidrule(l){2-3}
+   & E-mail & \\
+  \midrule
+  \textbf{Equipo ejecutor} & Nombre & \thesisauthorone \\
+  \cmidrule(l){2-3}
+   & E-mail & @unibarranquilla.edu.co \\
+  \cmidrule(l){2-3}
+   & Nombre & \thesisauthortwo \\
+  \cmidrule(l){2-3}
+   & E-mail & @unibarranquilla.edu.co \\
+  \midrule
+  \textbf{Palabras descriptivas} & \multicolumn{2}{>{\raggedright\arraybackslash}p{\dimexpr0.70\textwidth-4\tabcolsep\relax}}{} \\
+  \midrule
+  \textbf{Monto total del proyecto} & \multicolumn{2}{>{\raggedright\arraybackslash}p{\dimexpr0.70\textwidth-4\tabcolsep\relax}}{} \\
+  \midrule
+  \textbf{Cofinanciación con recursos externos}  & \multicolumn{2}{>{\raggedright\arraybackslash}p{\dimexpr0.70\textwidth-4\tabcolsep\relax}}{} \\
+  \midrule
+  \textbf{Monto de cofinanciación con recursos IUB} & \multicolumn{2}{>{\raggedright\arraybackslash}p{\dimexpr0.70\textwidth-4\tabcolsep\relax}}{} \\
+  \midrule
+  \textbf{Duración del proyecto (meses)} & \multicolumn{2}{>{\raggedright\arraybackslash}p{\dimexpr0.70\textwidth-4\tabcolsep\relax}}{} \\
+  \midrule
+  \textbf{Fecha de inicio} & \multicolumn{2}{>{\raggedright\arraybackslash}p{\dimexpr0.70\textwidth-4\tabcolsep\relax}}{} \\
+  \midrule
+  \textbf{Fecha de finalización} & \multicolumn{2}{>{\raggedright\arraybackslash}p{\dimexpr0.70\textwidth-4\tabcolsep\relax}}{} \\
+  \bottomrule
+\end{tabularx}
+\end{tablaCentrada}
+\endgroup
+
+\tablaDeContenido
+\listaDeIlustraciones
+\listaDeTablas
+
+\begin{resumen}
+\begin{instruccionesresumen}
+El Resumen Ejecutivo debe sintetizar la totalidad del proyecto Capstone en un único párrafo con una extensión estricta de \textbf{150 a 250 palabras}. No es una introducción extendida; debe presentar de forma compacta la lógica ingenieril del proyecto.
+
+\vspace{2mm}
+\noindent \textbf{Estructura secuencial obligatoria (Paso a Paso):}
+\begin{enumerate}
+  \item \textbf{Contexto y Problema (1-2 oraciones):} Defina la necesidad técnica o el fallo de ingeniería en el mundo real que justifica el proyecto.
+  \item \textbf{Objetivo y Alcance (1 oración):} Declare explícitamente la solución diseñada o desarrollada mediante verbos de ingeniería (\textsl{diseñar, optimizar, implementar, evaluar}).
+  \item \textbf{Metodología Empleada (2-3 oraciones):} Describa brevemente el enfoque técnico, herramientas de software (CAD, FEA, CFD), estándares utilizados o metodologías experimentales.
+  \item \textbf{Resultados Principales (2-3 oraciones):} Presente los hallazgos más relevantes de forma \textbf{cuantitativa}. Es obligatorio incluir métricas, porcentajes o valores numéricos específicos.
+  \item \textbf{Conclusión (1 oración):} Cierre con el impacto directo de la solución propuesta o su viabilidad técnica/económica.
+\end{enumerate}
+
+\vspace{2mm}
+\noindent \textbf{Reglas de Estilo y Restricciones:}
+\begin{itemize}
+  \item \textbf{Tiempo verbal:} Redactar en tiempo pasado (\textsl{se diseñó, se evaluó, se obtuvieron}) y de manera impersonal.
+  \item \textbf{Exclusiones críticas:} No incluya citas bibliográficas, referencias a figuras/tablas, ecuaciones complejas descriptivas ni siglas que no hayan sido definidas previamente.
+  \item Evite adjetivos subjetivos como ``excelente de desempeño'' o ``muy eficiente''. Utilice datos numéricos para demostrarlo.
+\end{itemize}
+
+\vspace{3mm}
+\noindent \textbf{Palabras Clave:} \textsl{Término técnico 1, Término técnico 2, Metodología/Herramienta principal (Máximo 5 palabras clave).}
+\end{instruccionesresumen}
+\end{resumen}
+
+\begin{abstractpg}
+\begin{instruccionesabstract}
+The \textsl{Abstract} or Executive Summary must synthesize the entire Capstone project in a single paragraph with a strict length of \textbf{150 to 250 words}. It is not an extended introduction; it must present the engineering logic of the project in a compact form.
+
+\vspace{2mm}
+\noindent \textbf{Mandatory Sequential Structure (Step by Step):}
+\begin{enumerate}
+  \item \textbf{Context and Problem (1-2 sentences):} Define the technical need or real-world engineering failure that justifies the project.
+  \item \textbf{Objective and Scope (1 sentence):} Explicitly state the designed or developed solution using engineering verbs (\textsl{design, optimize, implement, evaluate}).
+  \item \textbf{Methodology Used (2-3 sentences):} Briefly describe the technical approach, software tools (CAD, FEA, CFD), standards used, or experimental methodologies.
+  \item \textbf{Main Results (2-3 sentences):} Present the most relevant findings in a \textbf{quantitative} manner. Including metrics, percentages, or specific numerical values is mandatory.
+  \item \textbf{Conclusion (1 sentence):} Close with the direct impact of the proposed solution or its technical/economic feasibility.
+\end{enumerate}
+
+\vspace{2mm}
+\noindent \textbf{Style Rules and Restrictions:}
+\begin{itemize}
+  \item \textbf{Verb tense:} Write in the past tense (\textsl{was designed, was evaluated, were obtained}) and in an impersonal style.
+  \item \textbf{Critical exclusions:} Do not include bibliographic citations, figure/table references, complex descriptive equations, or undefined acronyms.
+  \item Avoid subjective adjectives such as ``excellent performance'' or ``very efficient''. Use numerical data to demonstrate it.
+\end{itemize}
+
+\vspace{3mm}
+\noindent \textbf{Keywords:} \textsl{Technical term 1, Technical term 2, Main methodology/tool (Maximum 5 keywords).}
+\end{instruccionesabstract}
+\end{abstractpg}
+
+\chapter{Introducción}
+
+
+\noindent \textbf{Mapa oficial de alineación SO--sección para evaluación ABET/EAC:}
+
+\begin{tablaCentrada}
+\begingroup
+\scriptsize
+\setlength{\tabcolsep}{3pt}
+\renewcommand{\arraystretch}{1.25}
+\begin{tabularx}{\textwidth}{>{\centering\arraybackslash}p{0.08\textwidth}>{\raggedright\arraybackslash}X>{\raggedright\arraybackslash}X>{\raggedright\arraybackslash}X}
+\toprule
+  \tablaEncabezado
+  \tablaHeader{SO} & \tablaHeader{Resultado del estudiante} & \tablaHeader{Secciones de cobertura} & \tablaHeader{Sección de evidencia directa} \\
+\midrule
+  SO1 & Aplicar conocimientos de matemáticas, ciencias e ingeniería para resolver problemas complejos. & \S4.1 Modelado físico-matemático y simulación. & Modelos, ecuaciones, simulaciones y validación contra datos experimentales en \S4.1. \\
+  SO2 & Aplicar diseño de ingeniería considerando necesidades y restricciones reales. & \S4.2 Ingeniería de diseño detallado; \S4.4 Ingeniería económica; \S1.2.4 Impacto social, económico y ambiental. & Requerimientos de diseño en \S1.6, decisiones de diseño en \S4.2 y análisis económico en \S4.4. \\
+  SO3 & Comunicar efectivamente con audiencias diversas. & Resumen, Abstract y \S4.2.4. & Resumen/Abstract estructurados, tablas de resultados y análisis de responsabilidad profesional. \\
+  SO4 & Reconocer responsabilidades éticas y profesionales, y considerar impactos globales, económicos, ambientales y sociales. & \S2.4 Estándares y normativa; \S1.2.4; \S4.2.4. & AMFE, matriz de responsabilidad ética y trazabilidad de normas aplicadas en \S4.2.4. \\
+  SO5 & Funcionar efectivamente en equipos con metas, planificación y cumplimiento de objetivos. & \S3.2 Planificación detallada; \S3.3 Distribución de funciones. & Cronograma de 16 semanas, método de seguimiento, matriz de roles y coevaluación estructurada. \\
+  SO6 & Desarrollar y conducir experimentación apropiada, analizar datos y usar juicio de ingeniería. & \S4.3 Implementación y validación experimental. & Protocolo de pruebas, diseño experimental, análisis estadístico y comparación con requerimientos. \\
+  SO7 & Adquirir y aplicar nuevo conocimiento de forma autónoma. & \S2.3 Adquisición de nuevo conocimiento. & Evidencias de autoformación, aplicación técnica y repositorio/historial de desarrollo cuando aplique. \\
+\bottomrule
+\end{tabularx}
+\endgroup
+\end{tablaCentrada}
+
+\begin{instrucciones}
+El párrafo de apertura tiene la misión de establecer el panorama. Debe ir directo al grano planteando el contexto de la situación y la necesidad o problema principal que tu proyecto de ingeniería busca resolver.
+
+Como recomendación metodológica clave, debes dejar la redacción de este párrafo y de toda la introducción para el final de tu proyecto.
+\end{instrucciones}
+
+\section{Planteamiento del problema}
+\begin{instrucciones}
+Describe la situación, brecha tecnológica o necesidad que tu proyecto busca resolver.
+\end{instrucciones}
+
+\section{Justificación}
+\begin{instrucciones}
+Desarrolla la justificación del proyecto explicando la importancia del problema, los beneficios esperados, la relevancia académica o investigativa y el impacto social, económico o ambiental.
+\end{instrucciones}
+
+\subsection{Importancia del problema}
+\begin{instrucciones}
+Explica por qué el problema identificado es relevante. Haz énfasis en lo que está en juego si no se resuelve.
+
+\vspace{2mm}
+\noindent \textbf{Frases guía:}
+\begin{itemize}
+  \item ``Este problema es importante porque\ldots''
+  \item ``Su atención resulta necesaria dado que\ldots''
+\end{itemize}
+
+\noindent \textbf{Ejemplo:} El proceso de dosificación manual en la planta XYZ ha demostrado ser ineficiente, provocando pérdidas económicas y retrasos. Atender esta problemática es clave para garantizar la competitividad de la empresa en un mercado cada vez más automatizado.
+\end{instrucciones}
+
+\subsection{Beneficios esperados}
+\begin{instrucciones}
+Describe los beneficios técnicos, operativos, económicos o sociales que se obtendrían al implementar la solución propuesta.
+
+\vspace{2mm}
+\noindent \textbf{Frases guía:}
+\begin{itemize}
+  \item ``El desarrollo del proyecto permitirá\ldots''
+  \item ``Se espera mejorar\ldots''
+\end{itemize}
+
+\noindent \textbf{Ejemplo:} El desarrollo de un sistema automatizado de dosificación permitirá reducir los errores humanos, optimizar el uso de materias primas, disminuir las paradas no programadas y aumentar la eficiencia global del proceso.
+\end{instrucciones}
+
+\subsection{Relevancia académica o investigativa}
+\begin{instrucciones}
+Justifica por qué este proyecto aporta conocimiento o práctica dentro del campo de la ingeniería mecatrónica.
+
+\vspace{2mm}
+\noindent \textbf{Frases guía:}
+\begin{itemize}
+  \item ``Desde el punto de vista académico, el proyecto\ldots''
+  \item ``Este trabajo representa una oportunidad de aplicar\ldots''
+  \item ``Este proyecto habilita competencias del perfil ocupacional del Ingeniero Mecatrónico IUB al aplicar\ldots''
+\end{itemize}
+
+\noindent \textbf{Ejemplo:} Este proyecto contribuye al perfil ocupacional del Ingeniero Mecatrónico IUB al integrar competencias de diseño, control e integración de sistemas. Su desarrollo habilita al egresado para desempeñarse como integrador de soluciones automáticas, jefe de mantenimiento o líder de proyectos de automatización industrial, alineándose con los estándares productivos de clase mundial que define el programa.
+\end{instrucciones}
+
+\subsection{Impacto social, económico o ambiental}
+\begin{instrucciones}
+Expón cómo el proyecto tendrá impacto más allá del entorno técnico inmediato. Todo proyecto debe considerar al menos dimensiones sociales, económicas, ambientales, de seguridad o de adopción tecnológica.
+
+\vspace{2mm}
+\noindent \textbf{Frases guía:}
+\begin{itemize}
+  \item ``Además, el proyecto contribuye a\ldots''
+  \item ``También podría replicarse en\ldots''
+\end{itemize}
+
+\noindent \textbf{Ejemplo:} Además, la solución puede adaptarse a otras industrias que enfrenten problemas similares, favoreciendo la implementación de tecnología de bajo costo en sectores productivos regionales.
+\end{instrucciones}
+
+\section{Objetivos}
+\begin{instrucciones}
+Los objetivos indican qué se pretende lograr con el proyecto. Deben estar directamente alineados con el problema identificado y la solución planteada.
+
+
+\begin{advertenciaABET}
+NOTA PARA INGENIERÍA MECATRÓNICA --- REQUISITO ABET: Los proyectos enfocados exclusivamente en tareas de mantenimiento correctivo, instalación, cableado de tableros o automatización mediante recetas preexistentes sin modelado, diseño y dimensionamiento de ingeniería original, no cumplen con la definición de ``diseño de ingeniería mayor'' (\textsl{major engineering design experience}) exigida por ABET EAC y no serán aprobados como proyectos Capstone del programa de Ingeniería Mecatrónica. El proyecto debe demostrar aplicación de conocimientos de matemáticas, ciencias e ingeniería para producir una solución que satisface necesidades específicas bajo restricciones reales (ABET SO1 + SO2).
+\end{advertenciaABET}
+
+\vspace{2mm}
+\noindent Se dividen en:
+\begin{itemize}
+  \item \textbf{Objetivo general:} expresa de forma global lo que se espera lograr al final del proyecto.
+  \item \textbf{Objetivos específicos:} desglosan el objetivo general en acciones concretas, ordenadas de forma cronológica y secuencial.
+\end{itemize}
+\end{instrucciones}
+
+\subsection{Objetivo general}
+\begin{instrucciones}
+Redacta el objetivo principal del proyecto en una sola oración, iniciando con un verbo en infinitivo.
+
+\vspace{2mm}
+\noindent \textbf{Estructura sugerida:} verbo en infinitivo + qué se va a hacer + dónde + para qué, si aplica.
+
+\vspace{2mm}
+\noindent \textbf{Verbos recomendados:} diseñar, desarrollar, implementar, proponer, optimizar, automatizar, evaluar, analizar.
+
+\vspace{2mm}
+\noindent \textbf{Ejemplo correcto:} Diseñar un sistema automatizado de dosificación para la planta de fertilizantes XYZ que permita reducir errores y paradas operativas.
+
+\vspace{2mm}
+\noindent \textbf{Ejemplo incorrecto:} Hacer una automatización chévere para que la planta funcione mejor. Este ejemplo usa lenguaje no técnico y poco preciso.
+\end{instrucciones}
+
+\subsection{Objetivos específicos}
+\begin{instrucciones}
+Divide el objetivo general en tareas o etapas medibles. Se recomienda usar entre tres y cinco objetivos, redactados en orden lógico y temporal.
+
+\vspace{2mm}
+\noindent \textbf{Estructura sugerida:} verbo en infinitivo + acción concreta + detalle técnico, indicando dónde, cómo o con qué se desarrollará.
+
+\vspace{2mm}
+\noindent \textbf{Verbos recomendados:} identificar, analizar, diseñar, modelar, simular, construir, implementar, verificar, evaluar, validar, optimizar.
+
+\vspace{2mm}
+\noindent \textbf{Ejemplo para un sistema automatizado de dosificación:}
+\begin{enumerate}
+  \item Diagnosticar las causas de fallas en el sistema actual de dosificación manual de la planta XYZ.
+  \item Diseñar un prototipo de sistema automatizado que reemplace la operación manual y controle el encendido y apagado de la máquina.
+  \item Implementar el prototipo utilizando controladores programables y sensores industriales.
+  \item Evaluar el desempeño del sistema automatizado en condiciones reales de operación.
+\end{enumerate}
+
+\vspace{2mm}
+\noindent \textbf{Tabla de validación de objetivos:}
+
+\begin{tablaCentrada}
+\begingroup
+\scriptsize
+\setlength{\tabcolsep}{2pt}
+\renewcommand{\arraystretch}{1.25}
+\begin{tabularx}{\textwidth}{>{\raggedright\arraybackslash}p{0.12\textwidth}>{\centering\arraybackslash}X>{\centering\arraybackslash}X>{\centering\arraybackslash}X>{\centering\arraybackslash}X>{\centering\arraybackslash}X>{\centering\arraybackslash}X}
+\toprule
+  \tablaEncabezado
+  \tablaHeader{Objetivo}  & \tablaHeader{¿Comienza con verbo en infinitivo?}  & \tablaHeader{¿Está alineado con el problema y la justificación?}  & \tablaHeader{¿Es claro y medible?}  & \tablaHeader{¿Se puede desarrollar dentro del alcance?}  & \tablaHeader{¿Está redactado en orden lógico/secuencial?}  & \tablaHeader{¿Tiene entregable o evidencia verificable de cumplimiento?} \\
+\midrule
+  Objetivo 1 & Sí & Sí & Sí & Sí & Sí & Informe de diagnóstico y matriz de requerimientos. \\
+  Objetivo 2 & Sí & Sí & Sí & Sí & Sí & Planos, modelo CAD, cálculos y AMFE preliminar. \\
+  Objetivo 3 & Sí & Sí & Sí & Sí & Sí & Prototipo integrado, código fuente y bitácora de pruebas. \\
+  Objetivo 4 & Sí & Sí & Sí & Sí & Sí & Protocolo experimental, datos medidos y análisis estadístico. \\
+  Objetivo 5 & Sí & Sí & Sí & Sí & Sí & Informe final, repositorio y sustentación técnica. \\
+\bottomrule
+\end{tabularx}
+\endgroup
+\end{tablaCentrada}
+\end{instrucciones}
+
+\section{Alcances}
+\begin{instrucciones}
+Los alcances definen hasta dónde llega el proyecto. Especifican lo que sí se va a hacer, lo que sí se va a cubrir y qué resultados se espera lograr dentro de los límites del tiempo, los recursos y los objetivos definidos.
+
+
+\begin{advertenciaABET}
+NOTA PARA INGENIERÍA MECATRÓNICA --- REQUISITO ABET: Los proyectos enfocados exclusivamente en tareas de mantenimiento correctivo, instalación, cableado de tableros o automatización mediante recetas preexistentes sin modelado, diseño y dimensionamiento de ingeniería original, no cumplen con la definición de ``diseño de ingeniería mayor'' (\textsl{major engineering design experience}) exigida por ABET EAC y no serán aprobados como proyectos Capstone del programa de Ingeniería Mecatrónica. El proyecto debe demostrar aplicación de conocimientos de matemáticas, ciencias e ingeniería para producir una solución que satisface necesidades específicas bajo restricciones reales (ABET SO1 + SO2).
+\end{advertenciaABET}
+
+\vspace{2mm}
+\noindent \textbf{Cómo redactar los alcances:}
+\begin{itemize}
+  \item Usa verbos concretos como desarrollar, implementar, evaluar, simular, automatizar, integrar, medir y analizar.
+  \item Define qué se va a hacer, en dónde, cómo y para qué.
+\end{itemize}
+
+\noindent \textbf{Ejemplo de alcance:} El proyecto desarrollará un sistema automatizado de dosificación de insumos químicos en la planta XYZ, utilizando sensores industriales, actuadores y un controlador programable. El sistema será implementado en una línea de producción simulada a escala de laboratorio y se evaluará su desempeño en términos de precisión y tiempos de respuesta.
+\end{instrucciones}
+
+\section{Limitaciones}
+\begin{instrucciones}
+Las limitaciones definen las condiciones externas o internas que restringen el proyecto. Indican qué no se hará, qué no se cubrirá o bajo qué restricciones se llevará a cabo la solución.
+
+\vspace{2mm}
+\noindent \textbf{Cómo redactar las limitaciones:}
+\begin{itemize}
+  \item Sé claro y honesto sobre lo que escapa al alcance del proyecto.
+  \item Agrupa las limitaciones por tiempo, recursos, presupuesto, tecnología, entorno real o laboratorio, según corresponda.
+\end{itemize}
+
+\noindent \textbf{Ejemplo de limitación:} El sistema propuesto no será instalado en la planta real por limitaciones de tiempo y recursos; las pruebas se realizarán en un entorno simulado. Tampoco se incluirá un módulo de interfaz gráfica para supervisión remota, ni se contemplarán fallos eléctricos externos al sistema.
+
+\vspace{2mm}
+\noindent \textbf{Tabla comparativa: Alcances vs. Limitaciones}
+
+\begin{tablaCentrada}
+\begingroup
+\scriptsize
+\setlength{\tabcolsep}{3pt}
+\renewcommand{\arraystretch}{1.25}
+\begin{tabularx}{\textwidth}{>{\raggedright\arraybackslash}p{0.20\textwidth}>{\raggedright\arraybackslash}X>{\raggedright\arraybackslash}X}
+\toprule
+  \tablaEncabezado
+  \tablaHeader{Elemento}  & \tablaHeader{Alcances}  & \tablaHeader{Limitaciones} \\
+\midrule
+  ¿Qué define? & Lo que sí se hará y el alcance funcional del proyecto. & Lo que no se hará o los factores que limitan el proyecto. \\
+  Enfocado en & Acciones, funcionalidades y entregables. & Restricciones, exclusiones y condiciones externas. \\
+  Ejemplo & Implementar un prototipo funcional a escala. & No implementar en planta real por falta de presupuesto y tiempo. \\
+  Recomendación & Ser específico y realista. & Aclarar desde el inicio lo que no se cubrirá para evitar confusiones. \\
+\bottomrule
+\end{tabularx}
+\endgroup
+\end{tablaCentrada}
+\end{instrucciones}
+
+
+\section{Requerimientos de diseño}
+\begin{instrucciones}
+Los requerimientos de diseño traducen el problema, los objetivos y las restricciones del contexto en condiciones verificables para el desarrollo de la solución. Deben distinguirse cuatro categorías: \textbf{requerimientos funcionales}, que describen lo que el sistema debe hacer; \textbf{requerimientos no funcionales}, que establecen atributos de desempeño, confiabilidad, usabilidad o mantenibilidad; \textbf{restricciones de diseño}, que delimitan costo, tiempo, tamaño, energía, materiales, seguridad o entorno de operación; y \textbf{criterios de aceptación}, que indican cómo se comprobará objetivamente el cumplimiento del requerimiento.
+
+\vspace{2mm}
+\noindent \textbf{Tabla obligatoria de requerimientos de diseño:}
+
+\begin{tablaCentrada}
+\begingroup
+\tiny
+\setlength{\tabcolsep}{2pt}
+\renewcommand{\arraystretch}{1.2}
+\begin{tabularx}{\textwidth}{>{\centering\arraybackslash}p{0.07\textwidth}>{\raggedright\arraybackslash}p{0.13\textwidth}>{\raggedright\arraybackslash}X>{\raggedright\arraybackslash}X>{\raggedright\arraybackslash}X>{\centering\arraybackslash}p{0.12\textwidth}}
+\toprule
+  \tablaEncabezado
+  \tablaHeader{ID} & \tablaHeader{Tipo} & \tablaHeader{Descripción del requerimiento} & \tablaHeader{Criterio de aceptación} & \tablaHeader{Método de verificación} & \tablaHeader{SO ABET relacionado} \\
+\midrule
+  RF-01 & Funcional & El sistema debe dosificar automáticamente una masa definida de material sólido. & Error de dosificación menor o igual al 5\% respecto al valor de referencia. & Ensayo de dosificación con mínimo 10 repeticiones y análisis de error porcentual. & SO2, SO6 \\
+  RNF-01 & No funcional & El prototipo debe operar de forma estable durante ciclos repetidos de prueba. & Operación continua durante 30 minutos sin fallas críticas ni reinicios no programados. & Prueba funcional prolongada con registro de eventos. & SO1, SO6 \\
+  RD-01 & Restricción & El diseño debe implementarse con componentes disponibles localmente y costo compatible con el presupuesto del curso. & Lista de materiales justificada y costo total dentro del presupuesto aprobado. & Revisión de BOM, cotizaciones y análisis económico. & SO2 \\
+  RE-01 & Estándar & El sistema debe incorporar criterios de seguridad para evitar atrapamiento, accionamiento inesperado o exposición del operador. & AMFE con NPR controlado y mitigaciones documentadas para riesgos críticos. & Revisión de diseño con referencia a ISO 12100 y validación de resguardos/paros. & SO4 \\
+\bottomrule
+\end{tabularx}
+\endgroup
+\end{tablaCentrada}
+
+\vspace{2mm}
+\noindent \textbf{Frases guía para redactar requerimientos:}
+\begin{itemize}
+  \item \textbf{Funcional:} ``El sistema deberá realizar [función técnica] bajo [condición de operación]''.
+  \item \textbf{No funcional:} ``El sistema deberá alcanzar [atributo de desempeño] con [valor medible]''.
+  \item \textbf{Restricción:} ``El diseño deberá cumplir [límite de costo, energía, tamaño, material, tiempo o entorno]''.
+  \item \textbf{Estándar:} ``El diseño deberá considerar [norma, protocolo o referente] para [decisión técnica verificable]''.
+\end{itemize}
+
+\vspace{2mm}
+\noindent \textbf{Ejemplo diligenciado para el sistema de dosificación XYZ:} El requerimiento RF-01 establece que el prototipo debe dosificar automáticamente una masa objetivo con error menor o igual al 5\%. Este requerimiento se verifica en \S4.3.2 mediante pruebas repetidas con balanza calibrada. El requerimiento RE-01 exige aplicar ISO 12100 para identificar riesgos de atrapamiento y definir mitigaciones como resguardos físicos, paro de emergencia y secuencia segura de arranque.
+
+\begin{advertenciaABET}
+Los requerimientos de esta sección son el contrato técnico del proyecto. Cada objetivo específico debe mapearse a al menos un requerimiento, y cada requerimiento debe verificarse en \S4.3.2 (Protocolo de Pruebas). Un proyecto sin requerimientos formales no puede ser evaluado contra criterios ABET SO2.
+\end{advertenciaABET}
+\end{instrucciones}
+
+\chapter{Estado del Arte y Estándares de Ingeniería}
+
+\begin{instrucciones}
+Este capítulo integra la revisión de soluciones existentes, la adquisición de nuevo conocimiento y los estándares de ingeniería aplicables al proyecto. Evalúa principalmente los Resultados del Estudiante ABET SO 4 y SO 7, al evidenciar el uso responsable de criterios profesionales, búsqueda técnica, aprendizaje autónomo y aplicación de normas en decisiones de diseño.
+
+\vspace{2mm}
+\noindent \textbf{Estructura recomendada del capítulo:}
+
+\begin{tablaCentrada}
+\begingroup
+\scriptsize
+\setlength{\tabcolsep}{4pt}
+\renewcommand{\arraystretch}{1.25}
+\begin{tabularx}{\textwidth}{>{\raggedright\arraybackslash}p{0.28\textwidth}>{\raggedright\arraybackslash}X}
+\toprule
+  \tablaEncabezado
+  \tablaHeader{Bloque}  & \tablaHeader{Qué incluir} \\
+\midrule
+  Introducción breve & Presenta el propósito del capítulo: qué se va a revisar, qué estándares se considerarán y por qué son relevantes. \\
+  Revisión de soluciones existentes & Describe estudios, artículos, patentes, proyectos o productos similares. Incluye autores, año, institución, país, tecnologías usadas, resultados, ventajas y limitaciones. \\
+  Adquisición de nuevo conocimiento & Explica qué tecnologías, lenguajes, herramientas o metodologías se aprendieron de forma autónoma para desarrollar el proyecto. \\
+  Estándares y normativa técnica aplicable & Presenta las normas, protocolos o estándares que orientan el diseño, la seguridad, la comunicación, la fabricación o la validación del sistema. \\
+  Comparación crítica & Identifica similitudes y diferencias con tu proyecto, limitaciones de soluciones previas y aportes de la propuesta. \\
+  Conclusión & Resume qué aprendiste de la revisión y cómo eso respalda tu proyecto. \\
+\bottomrule
+\end{tabularx}
+\endgroup
+\end{tablaCentrada}
+\end{instrucciones}
+
+\section{Introducción breve}
+\begin{instrucciones}
+Presenta el propósito del capítulo indicando qué soluciones, tecnologías, estudios, productos comerciales y estándares de ingeniería se revisarán, y por qué son relevantes para el diseño mecatrónico propuesto.
+
+\vspace{2mm}
+\noindent \textbf{Ejemplo:} En este capítulo se revisan soluciones de automatización aplicadas al control de dosificación en procesos industriales, junto con normas de seguridad, comunicación industrial y diseño electrónico, con el fin de identificar referentes técnicos que orienten el desarrollo responsable del presente proyecto.
+\end{instrucciones}
+
+\section{Revisión de soluciones existentes}
+\begin{instrucciones}
+Realiza una búsqueda en bases de datos de patentes, literatura técnica, artículos científicos, tesis, fichas técnicas y soluciones comerciales relacionadas con el problema del proyecto. Describe autores, año, institución o empresa, país, tecnologías usadas, resultados, ventajas y limitaciones.
+
+\vspace{2mm}
+\noindent \textbf{Ejemplo:} García et al. (2020) desarrollaron un sistema de dosificación con PLC y sensores de presión para una planta de bebidas, logrando reducir errores en un 30\%. En 2021, la Universidad Nacional implementó un sistema similar con Arduino y control PID, pero reportó inestabilidad en condiciones industriales reales. Por otro lado, empresas como Siemens y ABB ofrecen soluciones comerciales robustas, aunque de alto costo y poca flexibilidad para adaptaciones a pequeña escala.
+\end{instrucciones}
+
+\section{Adquisición de nuevo conocimiento}
+\begin{instrucciones}
+Sustenta la autoformación realizada en tecnologías, lenguajes de programación, herramientas de diseño, protocolos de comunicación, metodologías de control o procedimientos de validación que no fueron cubiertos de forma ordinaria en las clases. Explica qué se aprendió, por qué fue necesario y cómo se aplicó al proyecto.
+
+\vspace{2mm}
+\noindent \textbf{Ejemplo de redacción:} Para el desarrollo del proyecto fue necesario fortalecer conocimientos en programación de microcontroladores, selección de sensores industriales y simulación de circuitos en Proteus. Esta autoformación permitió definir la arquitectura de control, validar conexiones eléctricas antes del montaje físico y reducir errores durante la integración del prototipo.
+
+\vspace{2mm}
+\noindent \textbf{Evidencias sugeridas:}
+\begin{itemize}
+  \item Manuales técnicos, hojas de datos y documentación oficial consultada.
+  \item Cursos, tutoriales, guías de laboratorio o repositorios utilizados para aprendizaje autónomo.
+  \item Pruebas preliminares, simulaciones, códigos de ensayo o prototipos exploratorios.
+  \item Relación entre el conocimiento adquirido y una decisión concreta de diseño.
+\end{itemize}
+\end{instrucciones}
+
+\section{Estándares y normativa técnica aplicable}
+\begin{instrucciones}
+Construye una matriz detallada de las normas, estándares o protocolos que rigen el diseño mecatrónico propuesto. Incluye normas de seguridad en maquinaria, comunicación industrial, diseño eléctrico, diseño de PCB, documentación técnica o pruebas de validación, según el alcance real del proyecto.
+
+\vspace{2mm}
+\noindent \textbf{Matriz sugerida de estándares:}
+
+\begin{tablaCentrada}
+\begingroup
+\tiny
+\setlength{\tabcolsep}{2pt}
+\renewcommand{\arraystretch}{1.2}
+\begin{tabularx}{\textwidth}{>{\raggedright\arraybackslash}p{0.18\textwidth}>{\raggedright\arraybackslash}p{0.18\textwidth}>{\raggedright\arraybackslash}X>{\raggedright\arraybackslash}X}
+\toprule
+  \tablaEncabezado
+  \tablaHeader{Norma, estándar o protocolo}  & \tablaHeader{Área de aplicación}  & \tablaHeader{Relación con el proyecto}  & \tablaHeader{Evidencia o decisión de diseño} \\
+\midrule
+  ISO 12100 & Seguridad en maquinaria & Orienta la identificación de peligros, evaluación de riesgos y definición de medidas de protección en sistemas mecatrónicos. & Matriz de riesgos, resguardos, paro de emergencia, advertencias y criterios de operación segura. \\
+  IEC 61158 & Comunicación industrial & Apoya la selección de protocolos de comunicación entre controladores, sensores, actuadores o módulos industriales. & Selección del protocolo de comunicación, arquitectura de red y criterios de interoperabilidad. \\
+  IPC para diseño de PCB & Diseño y fabricación electrónica & Sirve como referencia para criterios de diseño, montaje, separación, ruteo y fabricación de tarjetas electrónicas. & Reglas de diseño de PCB, ancho de pistas, separación eléctrica, ubicación de componentes y documentación de fabricación. \\
+  Norma o ficha técnica del fabricante & Selección de componentes & Define condiciones de operación, límites eléctricos, mecánicos o ambientales de sensores, actuadores y controladores. & Selección justificada de componentes, rangos de trabajo y condiciones de instalación. \\
+  Protocolo de pruebas del proyecto & Validación técnica & Establece cómo se medirán precisión, tiempos de respuesta, estabilidad, repetibilidad o seguridad del sistema. & Formatos de prueba, tablas de medición, criterios de aceptación y registro de resultados. \\
+\bottomrule
+\end{tabularx}
+\endgroup
+\end{tablaCentrada}
+
+\noindent \textbf{Ejemplo de redacción:} Para el diseño del sistema se considerará la norma ISO 12100 como referencia para identificar riesgos asociados al movimiento de actuadores y operación de la máquina. Asimismo, se revisará IEC 61158 para justificar la selección del protocolo de comunicación industrial y criterios IPC para el diseño de tarjetas electrónicas, si el prototipo requiere una PCB dedicada.
+\end{instrucciones}
+
+\section{Comparación crítica}
+\begin{instrucciones}
+Compara los antecedentes revisados con tu proyecto. Identifica similitudes, diferencias, limitaciones de las soluciones existentes, estándares aplicables y la forma en que tu propuesta aporta, adapta o mejora frente a ellas.
+
+\vspace{2mm}
+\noindent \textbf{Ejemplo:} A diferencia de los sistemas anteriores, este proyecto se enfoca en una planta de fertilizantes, lo cual implica manejar materiales sólidos y no líquidos. Además, se plantea una solución de bajo costo utilizando sensores industriales y microcontroladores compatibles con entornos exigentes, incorporando criterios de seguridad, comunicación y validación técnica que atienden limitaciones observadas en estudios previos.
+\end{instrucciones}
+
+\section{Conclusión del capítulo}
+\begin{instrucciones}
+Resume los aprendizajes principales de la revisión, el nuevo conocimiento adquirido y la forma en que los estándares técnicos respaldan la pertinencia, seguridad y viabilidad del proyecto.
+
+\vspace{2mm}
+\noindent \textbf{Ejemplo:} La revisión muestra que existen soluciones viables, pero con limitaciones de costo, adaptabilidad o documentación normativa. Esto respalda la pertinencia de una propuesta mecatrónica adaptable, económica y precisa, desarrollada con aprendizaje autónomo y orientada por estándares de seguridad, comunicación y validación técnica.
+
+\vspace{2mm}
+\noindent \textbf{Recomendaciones clave:}
+\begin{itemize}
+  \item Usa fuentes confiables como artículos científicos, tesis, normas, patentes y fichas técnicas.
+  \item Cita autores, años y contexto técnico.
+  \item Evita copiar descripciones sin análisis: siempre compara.
+  \item El capítulo debe incluir mínimo 8 fuentes técnicas indexadas (IEEE Xplore, Scopus, ScienceDirect o equivalentes), con antigüedad no mayor a 10 años, salvo normas técnicas vigentes. La extensión es secundaria a la densidad analítica: cada fuente debe analizarse críticamente, no solo describirse.
+\end{itemize}
+\end{instrucciones}
+
+\chapter{Gestión del Proyecto}
+
+\begin{instrucciones}
+Presenta la planificación, organización y seguimiento del proyecto. Incluye las actividades principales, responsables, cronograma, recursos necesarios, presupuesto, riesgos y estrategias de control que permiten ejecutar la propuesta de forma ordenada y viable.
+\end{instrucciones}
+
+\section{Metodología}
+
+\begin{instrucciones}
+La metodología es la descripción clara y ordenada del proceso que se seguirá para desarrollar el proyecto. Debe responder a la pregunta: ¿cómo se va a hacer el proyecto, paso a paso, desde el diagnóstico hasta la validación?
+\end{instrucciones}
+
+\subsection{Enfoque general}
+\begin{instrucciones}
+Indica si el proyecto corresponde a un enfoque experimental, de diseño, simulación, implementación u otro enfoque técnico.
+
+\vspace{2mm}
+\noindent \textbf{Ejemplo aplicado:} Proyecto de diseño e implementación mecatrónica.
+
+\vspace{2mm}
+\noindent \textbf{Ejemplo de redacción:} Este proyecto se desarrollará bajo un enfoque de diseño e implementación mecatrónica, orientado a construir y validar un prototipo funcional para automatizar el proceso de dosificación.
+\end{instrucciones}
+
+\subsection{Técnicas y herramientas}
+\begin{instrucciones}
+Define las tecnologías, plataformas, lenguajes, softwares y equipos que se utilizarán durante el desarrollo del proyecto.
+
+\vspace{2mm}
+\noindent \textbf{Ejemplo aplicado:} Arduino, sensores de presión, SolidWorks, PLC, LabVIEW, MATLAB, Proteus, entre otros.
+
+\vspace{2mm}
+\noindent \textbf{Ejemplo de redacción:} Para el desarrollo del sistema se emplearán herramientas de diseño mecánico como SolidWorks, plataformas de control como Arduino o PLC, sensores industriales para la medición de variables y software de simulación como Proteus o MATLAB.
+\end{instrucciones}
+
+\subsection{Fases o etapas}
+\begin{instrucciones}
+Describe paso a paso las actividades del proyecto en orden cronológico, desde el diagnóstico hasta la validación final.
+
+\vspace{2mm}
+\noindent \textbf{Ejemplo aplicado:} Diagnóstico, diseño, construcción, pruebas y validación.
+
+\vspace{2mm}
+\noindent \textbf{Ejemplo de redacción:} El proyecto se desarrollará en cinco fases: diagnóstico del sistema actual, diseño de la solución mecatrónica, construcción del prototipo, ejecución de pruebas funcionales y validación de resultados frente a los criterios definidos.
+\end{instrucciones}
+
+\subsection{Validación o pruebas}
+\begin{instrucciones}
+Explica cómo se comprobará que el sistema funciona correctamente mediante simulaciones, pruebas físicas, mediciones o comparación con datos reales.
+
+\vspace{2mm}
+\noindent \textbf{Ejemplo aplicado:} Pruebas de precisión de dosificación y comparación con datos manuales.
+
+\vspace{2mm}
+\noindent \textbf{Ejemplo de redacción:} La validación se realizará mediante pruebas de precisión, medición de tiempos de respuesta y comparación de los resultados obtenidos con los datos del proceso manual, verificando la mejora del desempeño del sistema automatizado.
+\end{instrucciones}
+
+\subsection{Cronograma}
+\begin{instrucciones}
+Incluye una tabla de 16 semanas con fases, actividades, responsables y entregables principales. Los hitos institucionales de semanas 4, 8, 12 y 16 no son editables por el estudiante.
+
+\vspace{2mm}
+\noindent \textbf{Ejemplo aplicado:} Tabla de Gantt con fases del proyecto.
+
+\vspace{2mm}
+\noindent \textbf{Ejemplo de redacción:} El cronograma se organizará por semanas y fases de trabajo, asignando actividades, responsables y entregables para controlar el avance del diagnóstico, diseño, construcción, pruebas y validación del proyecto.
+\end{instrucciones}
+
+\begin{instrucciones}
+
+\noindent \textbf{Ejemplo redactado de metodología:} Este proyecto seguirá un enfoque de diseño e implementación experimental. Se utilizarán herramientas como SolidWorks para el diseño mecánico, Arduino como plataforma de control, sensores de presión para la medición de variables y software de simulación como Proteus y MATLAB para validar el comportamiento previo a las pruebas físicas.
+
+\vspace{2mm}
+\noindent La metodología consta de cinco fases:
+\begin{enumerate}
+  \item \textbf{Diagnóstico:} recopilación de datos sobre el sistema de dosificación manual.
+  \item \textbf{Diseño:} elaboración del diagrama del sistema mecatrónico, selección de componentes y desarrollo de esquemas eléctricos.
+  \item \textbf{Construcción:} armado del prototipo, integración del hardware y desarrollo del firmware.
+  \item \textbf{Pruebas funcionales:} verificación de precisión en dosificación, tiempos de respuesta y estabilidad del sistema.
+  \item \textbf{Validación y ajustes:} comparación de resultados con el sistema manual, identificación de mejoras e iteración final.
+\end{enumerate}
+
+\noindent Las pruebas se realizarán en condiciones simuladas en laboratorio, controlando las variables para garantizar resultados reproducibles.
+
+\vspace{2mm}
+\noindent \textbf{Consejos para una buena metodología:}
+\begin{itemize}
+  \item Sé concreto y cronológico; evita explicaciones vagas o desordenadas.
+  \item Nombra las herramientas específicas, como sensores, plataformas, lenguajes y softwares.
+  \item Evita repetir objetivos o teoría en esta sección.
+  \item Conecta las fases metodológicas con los objetivos específicos del proyecto.
+\end{itemize}
+
+\vspace{2mm}
+\noindent \textbf{Matriz metodológica sugerida:}
+
+\begin{tablaCentrada}
+\begingroup
+\tiny
+\setlength{\tabcolsep}{2pt}
+\renewcommand{\arraystretch}{1.2}
+\begin{tabularx}{\textwidth}{>{\raggedright\arraybackslash}p{0.22\textwidth}>{\raggedright\arraybackslash}X>{\raggedright\arraybackslash}p{0.13\textwidth}>{\raggedright\arraybackslash}X>{\raggedright\arraybackslash}p{0.18\textwidth}}
+\toprule
+  \tablaEncabezado
+  \tablaHeader{Objetivo específico}  & \tablaHeader{Actividades}  & \tablaHeader{Método}  & \tablaHeader{Técnicas utilizadas}  & \tablaHeader{Entregable o resultado} \\
+\midrule
+  Diagnosticar el sistema actual de dosificación manual en la planta XYZ. & Revisión de registros; observación directa del proceso; entrevistas a operadores. & Estudio de caso. & Entrevistas semiestructuradas; registro de fallas; checklists. & Informe de diagnóstico técnico. \\
+  Diseñar el prototipo automatizado para el proceso de dosificación. & Elaboración de diagramas eléctricos; selección de sensores y actuadores; modelado 3D. & Diseño experimental. & SolidWorks; catálogos técnicos; simulación en Proteus. & Planos del sistema y modelo 3D. \\
+  Implementar el sistema en entorno simulado. & Integración de hardware; programación del microcontrolador; ensamblaje del prototipo. & Prototipado. & Arduino IDE; pruebas de integración; soldadura electrónica. & Prototipo funcional ensamblado. \\
+  Validar el desempeño del sistema automatizado. & Pruebas funcionales; medición de precisión y tiempos; comparación con sistema manual. & Evaluación comparativa. & Cronometría; tablas de medición; análisis de datos. & Informe de validación con mejoras propuestas. \\
+\bottomrule
+\end{tabularx}
+\endgroup
+\end{tablaCentrada}
+\end{instrucciones}
+
+\section{Planificación detallada}
+
+\begin{instrucciones}
+La planificación detallada describe cómo se llevará a cabo el proyecto en términos de tiempo, actividades, responsables y resultados esperados. Esta sección debe mostrar que el equipo sabe organizar el trabajo, distribuir funciones, prever entregables y controlar el avance real frente a lo planeado.
+
+\vspace{2mm}
+\noindent \textbf{Planificación temporal y control:} Incluye una línea de tiempo real ejecutada en comparación con la planificación original. Puede presentarse mediante un diagrama de Gantt comparativo, una bitácora de sprints o una tabla de control con fechas planificadas, fechas reales, desviaciones y acciones correctivas.
+
+\vspace{2mm}
+\noindent \textbf{Ejemplo de redacción:} Esta sección presenta la planificación del proyecto en función del cronograma de actividades y la distribución de responsabilidades del equipo. La gestión se basa en las fases definidas en la metodología y tiene como objetivo garantizar el cumplimiento de los objetivos planteados dentro de los plazos establecidos.
+
+\vspace{2mm}
+\noindent \textbf{Cronograma de actividades del proyecto:}
+
+\begin{tablaCentrada}
+\begingroup
+\scriptsize
+\setlength{\tabcolsep}{3pt}
+\renewcommand{\arraystretch}{1.25}
+\begin{tabularx}{\textwidth}{>{\raggedright\arraybackslash}p{0.30\textwidth}>{\centering\arraybackslash}p{0.09\textwidth}>{\centering\arraybackslash}p{0.09\textwidth}>{\centering\arraybackslash}p{0.09\textwidth}>{\centering\arraybackslash}p{0.09\textwidth}>{\raggedright\arraybackslash}X}
+\toprule
+  \tablaEncabezado
+  \tablaHeader{Actividad}  & \tablaHeader{S1--S4}  & \tablaHeader{S5--S8}  & \tablaHeader{S9--S12}  & \tablaHeader{S13--S16}  & \tablaHeader{Hito o entregable} \\
+\midrule
+  Diagnóstico del sistema actual y formulación de requerimientos & X & & & & Semana 4: Entrega Informe de Avance 1 (Capítulos 1--2 + \S1.6). \\
+  Diseño preliminar, selección de componentes y planificación detallada & & X & & & Semana 8: Entrega Informe de Avance 2 (Capítulo 3 + diseño preliminar). \\
+  Implementación parcial, simulación, integración inicial y AMFE & & & X & & Semana 12: Entrega Informe de Avance 3 (Capítulo 4 parcial + AMFE). \\
+  Validación experimental, análisis económico y cierre documental & & & & X & Semana 16: Entrega documento final y sustentación oral. \\
+\bottomrule
+\end{tabularx}
+\endgroup
+\end{tablaCentrada}
+
+\end{instrucciones}
+
+\subsection{Método de control y seguimiento del proyecto}
+\begin{instrucciones}
+ABET SO5 evalúa no solo la distribución de roles, sino la capacidad del equipo para establecer metas, planificar tareas y cumplir objetivos de forma continua, verificable y documentada. Por tanto, el equipo debe seleccionar una metodología de seguimiento y conservar evidencia periódica del avance técnico.
+
+\vspace{2mm}
+\noindent \textbf{Opciones de metodología de seguimiento:}
+
+\begin{tablaCentrada}
+\begingroup
+\scriptsize
+\setlength{\tabcolsep}{3pt}
+\renewcommand{\arraystretch}{1.25}
+\begin{tabularx}{\textwidth}{>{\raggedright\arraybackslash}p{0.20\textwidth}>{\raggedright\arraybackslash}X>{\raggedright\arraybackslash}p{0.20\textwidth}>{\raggedright\arraybackslash}X}
+\toprule
+  \tablaEncabezado
+  \tablaHeader{Metodología} & \tablaHeader{Descripción} & \tablaHeader{Frecuencia de reporte} & \tablaHeader{Evidencia generada} \\
+\midrule
+  Scrum adaptado & Sprints quincenales con backlog, revisión de avance y retrospectiva. & Cada dos semanas. & Backlog, actas de sprint, retrospectivas y lista de impedimentos. \\
+  Kanban & Tablero de tareas con estados por hacer, en proceso y hecho. & Actualización semanal. & Capturas del tablero, flujo de tareas y responsables. \\
+  Reporte semanal estructurado & Formato estandarizado con hitos individuales y porcentaje de avance. & Semanal. & Reportes firmados, métricas de avance y acciones correctivas. \\
+  Bitácora de proyecto & Registro cronológico de decisiones técnicas, pruebas, cambios y acuerdos. & En cada sesión de trabajo. & Bitácora fechada, evidencias fotográficas y decisiones justificadas. \\
+\bottomrule
+\end{tabularx}
+\endgroup
+\end{tablaCentrada}
+
+\vspace{2mm}
+\noindent \textbf{Plantilla editable del reporte de avance quincenal:}
+
+\begin{tablaCentrada}
+\begingroup
+\tiny
+\setlength{\tabcolsep}{2pt}
+\renewcommand{\arraystretch}{1.2}
+\begin{tabularx}{\textwidth}{>{\centering\arraybackslash}p{0.08\textwidth}>{\raggedright\arraybackslash}X>{\raggedright\arraybackslash}X>{\centering\arraybackslash}p{0.10\textwidth}>{\raggedright\arraybackslash}X>{\raggedright\arraybackslash}X>{\raggedright\arraybackslash}p{0.14\textwidth}}
+\toprule
+  \tablaEncabezado
+  \tablaHeader{Semana} & \tablaHeader{Actividad planificada} & \tablaHeader{Actividad ejecutada} & \tablaHeader{\% de avance} & \tablaHeader{Obstáculos identificados} & \tablaHeader{Acción correctiva} & \tablaHeader{Responsable} \\
+\midrule
+  1--2 & & & & & & \\
+  3--4 & & & & & & \\
+  5--6 & & & & & & \\
+  7--8 & & & & & & \\
+  9--10 & & & & & & \\
+  11--12 & & & & & & \\
+  13--14 & & & & & & \\
+  15--16 & & & & & & \\
+\bottomrule
+\end{tabularx}
+\endgroup
+\end{tablaCentrada}
+
+\begin{advertenciaABET}
+Los reportes de seguimiento son evidencia cuantificable de SO5 ante evaluadores ABET. Deben conservarse durante todo el proyecto y entregarse como parte del Anexo o portafolio del curso.
+\end{advertenciaABET}
+\end{instrucciones}
+
+\begin{instrucciones}
+\noindent \textbf{Tabla de control planificado vs. ejecutado:}
+
+\begin{tablaCentrada}
+\begingroup
+\scriptsize
+\setlength{\tabcolsep}{3pt}
+\renewcommand{\arraystretch}{1.25}
+\begin{tabularx}{\textwidth}{>{\raggedright\arraybackslash}p{0.24\textwidth}>{\centering\arraybackslash}p{0.15\textwidth}>{\centering\arraybackslash}p{0.15\textwidth}>{\raggedright\arraybackslash}X>{\raggedright\arraybackslash}X}
+\toprule
+  \tablaEncabezado
+  \tablaHeader{Actividad o fase}  & \tablaHeader{Fecha planificada}  & \tablaHeader{Fecha real}  & \tablaHeader{Desviación encontrada}  & \tablaHeader{Acción de control o ajuste} \\
+\midrule
+  Diagnóstico & & & & \\
+  Diseño & & & & \\
+  Implementación & & & & \\
+  Pruebas y validación & & & & \\
+  Informe final & & & & \\
+\bottomrule
+\end{tabularx}
+\endgroup
+\end{tablaCentrada}
+\end{instrucciones}
+
+\section{Distribución de funciones}
+
+\begin{instrucciones}
+La distribución de funciones presenta los roles, responsabilidades y entregables asignados a cada integrante del equipo. Debe permitir identificar la contribución individual dentro del grupo y certificar quién fue el responsable técnico directo de cada actividad o producto del proyecto.
+
+\vspace{2mm}
+\noindent \textbf{Matriz de roles y responsabilidades:}
+
+\begin{tablaCentrada}
+\begingroup
+\scriptsize
+\setlength{\tabcolsep}{4pt}
+\renewcommand{\arraystretch}{1.25}
+\begin{tabularx}{\textwidth}{>{\raggedright\arraybackslash}p{0.24\textwidth}>{\raggedright\arraybackslash}X>{\raggedright\arraybackslash}X}
+\toprule
+  \tablaEncabezado
+  \tablaHeader{Nombre del integrante}  & \tablaHeader{Responsabilidades asignadas}  & \tablaHeader{Entregable o evidencia de contribución} \\
+\midrule
+  Estudiante 1 & Diseño del sistema, modelado 3D y selección preliminar de componentes. & Planos, modelo 3D, lista de materiales y criterios de selección. \\
+  Estudiante 2 & Programación del microcontrolador, integración de hardware y pruebas de comunicación. & Código fuente, esquema de conexión, prototipo integrado y reporte de pruebas. \\
+  Estudiante 3 & Validación de resultados, análisis de datos y redacción del informe técnico. & Tablas de medición, análisis comparativo, informe de validación y documento final. \\
+\bottomrule
+\end{tabularx}
+\endgroup
+\end{tablaCentrada}
+
+\noindent \textbf{Matriz por entregable:}
+
+\begin{tablaCentrada}
+\begingroup
+\scriptsize
+\setlength{\tabcolsep}{3pt}
+\renewcommand{\arraystretch}{1.25}
+\begin{tabularx}{\textwidth}{>{\raggedright\arraybackslash}p{0.28\textwidth}>{\raggedright\arraybackslash}p{0.24\textwidth}>{\raggedright\arraybackslash}X>{\raggedright\arraybackslash}X}
+\toprule
+  \tablaEncabezado
+  \tablaHeader{Entregable}  & \tablaHeader{Responsable técnico directo}  & \tablaHeader{Apoyos del equipo}  & \tablaHeader{Evidencia de cumplimiento} \\
+\midrule
+  Informe de diagnóstico & & & \\
+  Diseño del prototipo & & & \\
+  Prototipo funcional & & & \\
+  Pruebas y validación & & & \\
+  Informe final y presentación & & & \\
+\bottomrule
+\end{tabularx}
+\endgroup
+\end{tablaCentrada}
+
+
+\noindent \textbf{Instrumento de coevaluación estructurado:}
+
+\vspace{1mm}
+\noindent \textbf{Datos de aplicación:}
+
+\noindent Evaluador: \rule{3cm}{0.4pt} \quad Evaluado: \rule{3cm}{0.4pt} \quad Fecha: \rule{2.4cm}{0.4pt}
+
+\noindent Proyecto: \rule{3cm}{0.4pt} \quad Semestre: \rule{2cm}{0.4pt}
+
+\begin{tablaCentrada}
+\begingroup
+\tiny
+\setlength{\tabcolsep}{2pt}
+\renewcommand{\arraystretch}{1.2}
+\begin{tabularx}{\textwidth}{>{\raggedright\arraybackslash}X>{\centering\arraybackslash}p{0.06\textwidth}>{\centering\arraybackslash}p{0.06\textwidth}>{\centering\arraybackslash}p{0.06\textwidth}>{\centering\arraybackslash}p{0.06\textwidth}>{\centering\arraybackslash}p{0.06\textwidth}}
+\toprule
+  \tablaEncabezado
+  \tablaHeader{Ítem} & \tablaHeader{1} & \tablaHeader{2} & \tablaHeader{3} & \tablaHeader{4} & \tablaHeader{5} \\
+\midrule
+  Cumplió tareas asignadas dentro de los plazos acordados. & & & & & \\
+  Contribuyó activamente en reuniones y decisiones técnicas del equipo. & & & & & \\
+  La calidad técnica de su trabajo fue consistente con los requerimientos. & & & & & \\
+  Comunicó avances y dificultades de forma oportuna al equipo. & & & & & \\
+  Demostró disposición para apoyar a otros integrantes cuando fue necesario. & & & & & \\
+  Participó en la identificación y resolución de problemas técnicos del grupo. & & & & & \\
+\bottomrule
+\end{tabularx}
+\endgroup
+\end{tablaCentrada}
+
+\noindent \textbf{Fortaleza principal (máximo 50 palabras):}
+
+\noindent\rule{\textwidth}{0.4pt}
+
+\vspace{2mm}
+\noindent \textbf{Área de mejora identificada (máximo 50 palabras):}
+
+\noindent\rule{\textwidth}{0.4pt}
+
+\begin{advertenciaABET}
+Este instrumento es confidencial. Evalúa comportamientos observables, no personas. Los resultados son procesados por el asesor para generar evidencia cuantificable de ABET SO5.
+\end{advertenciaABET}
+
+\end{instrucciones}
+
+\chapter{Resultados}
+
+\begin{instrucciones}
+Presenta los resultados obtenidos durante el desarrollo y validación del proyecto. Incluye evidencias cuantitativas, tablas, gráficas, mediciones, pruebas funcionales, comparación con los objetivos planteados y análisis técnico de los hallazgos más relevantes.
+\end{instrucciones}
+
+\section{Modelado físico-matemático y simulación}
+
+\begin{instrucciones}
+Este numeral presenta la formulación físico-matemática del sistema mecatrónico y la simulación dinámica usada para analizar su comportamiento. Evalúa principalmente el Resultado del Estudiante ABET SO 1, al evidenciar la capacidad de identificar, formular y resolver problemas complejos de ingeniería mediante principios de matemáticas, ciencias e ingeniería.
+\end{instrucciones}
+
+\subsection{Modelado matemático del sistema}
+
+\begin{instrucciones}
+\begin{advertenciaABET}
+Nota de aplicabilidad: Si la naturaleza del proyecto no involucra dinámica de sistemas continua (p. ej., visión artificial, IoT, HMI, análisis de datos), justificar esta condición en un párrafo explícito y sustituir por el modelo que mejor represente el sistema: lógico de estados, de flujo de datos, de arquitectura funcional o de proceso. La sustitución no exime de presentar representaciones formales del sistema ni de satisfacer ABET SO1.
+\end{advertenciaABET}
+
+Desarrolla la deducción analítica de la física del sistema. En esta sección es mandatorio el uso de representaciones matemáticas rigurosas, definiendo variables, parámetros, entradas, salidas, supuestos del modelo y ecuaciones que describen la dinámica del sistema.
+
+\vspace{2mm}
+\noindent \textbf{Aspectos mínimos a incluir:}
+\begin{itemize}
+  \item Descripción física del sistema o subsistema modelado.
+  \item Supuestos de modelado y condiciones de operación.
+  \item Variables de entrada, salida y estado.
+  \item Parámetros físicos, eléctricos, mecánicos o de control.
+  \item Ecuaciones diferenciales, función de transferencia o modelo en espacio de estados.
+\end{itemize}
+
+\vspace{2mm}
+\noindent \textbf{Ejemplo de modelo dinámico en variables de estado para un sistema mecánico:}
+
+\[
+\dot{x}(t) = A x(t) + B u(t)
+\]
+
+\[
+y(t) = C x(t) + D u(t)
+\]
+
+\noindent donde $x(t)$ representa el vector de estados, $u(t)$ la entrada del sistema, $y(t)$ la salida, y $A$, $B$, $C$ y $D$ las matrices que describen la dinámica, entrada, salida y transmisión directa del sistema.
+
+\vspace{2mm}
+\noindent \textbf{Ejemplo de función de transferencia para una planta mecatrónica:}
+
+\[
+G(s) = \frac{\Theta(s)}{V_a(s)} = \frac{K_t}{J_m L_a s^3 + (R_a J_m + b L_a) s^2 + (R_a b + K_t K_e) s}
+\]
+
+\noindent En este ejemplo, $\Theta(s)$ representa la salida angular, $V_a(s)$ el voltaje de armadura, $K_t$ la constante de torque, $K_e$ la constante contraelectromotriz, $J_m$ la inercia equivalente, $L_a$ la inductancia de armadura, $R_a$ la resistencia de armadura y $b$ el coeficiente de fricción viscosa.
+
+\vspace{2mm}
+\noindent \textbf{Ejemplo de redacción:} A partir del análisis físico del actuador se plantearon las ecuaciones eléctricas y mecánicas que relacionan el voltaje de entrada con la posición angular del eje. Posteriormente, las ecuaciones diferenciales fueron transformadas al dominio de Laplace para obtener la función de transferencia de la planta, la cual sirve como base para el análisis dinámico y la selección de la estrategia de control.
+\end{instrucciones}
+
+\subsection{Simulación dinámica y validación de modelos}
+
+\begin{instrucciones}
+Presenta los gráficos y el análisis del comportamiento dinámico del sistema utilizando herramientas de cómputo como MATLAB, Simulink, Python, Proteus, LabVIEW u otras plataformas equivalentes. La simulación debe realizarse bajo diferentes condiciones de entrada y debe permitir comparar el comportamiento esperado del modelo con criterios de desempeño o datos experimentales, si están disponibles.
+
+\vspace{2mm}
+\noindent \textbf{Aspectos mínimos a incluir:}
+\begin{itemize}
+  \item Herramienta de simulación utilizada y justificación de su selección.
+  \item Parámetros del modelo empleados en la simulación.
+  \item Condiciones de entrada, por ejemplo escalón, rampa, señal senoidal o perturbaciones.
+  \item Gráficas de respuesta temporal, error, estabilidad, velocidad, posición, corriente, fuerza, temperatura u otra variable relevante.
+  \item Análisis de desempeño: tiempo de establecimiento, sobreimpulso, error en estado estacionario, precisión, repetibilidad o estabilidad.
+  \item Validación del modelo mediante comparación con mediciones reales, datos de referencia o criterios de diseño.
+\end{itemize}
+
+\vspace{2mm}
+\noindent \textbf{Tabla sugerida para registrar simulaciones:}
+
+\begin{tablaCentrada}
+\begingroup
+\scriptsize
+\setlength{\tabcolsep}{3pt}
+\renewcommand{\arraystretch}{1.25}
+\begin{tabularx}{\textwidth}{>{\raggedright\arraybackslash}p{0.22\textwidth}>{\raggedright\arraybackslash}X>{\raggedright\arraybackslash}X>{\raggedright\arraybackslash}X}
+\toprule
+  \tablaEncabezado
+  \tablaHeader{Escenario de simulación}  & \tablaHeader{Entrada aplicada}  & \tablaHeader{Variables analizadas}  & \tablaHeader{Resultado o criterio de validación} \\
+\midrule
+  Respuesta nominal & Escalón de referencia & Posición, velocidad, corriente o variable principal & Tiempo de respuesta, estabilidad y seguimiento de referencia. \\
+  Variación de carga & Escalón con perturbación & Error, torque, corriente o esfuerzo del actuador & Capacidad del sistema para mantener el desempeño ante cambios de carga. \\
+  Condición límite & Entrada máxima permitida & Saturación, temperatura, corriente o desplazamiento & Verificación de operación dentro de límites seguros. \\
+\bottomrule
+\end{tabularx}
+\endgroup
+\end{tablaCentrada}
+
+\noindent \textbf{Ejemplo de redacción:} La simulación dinámica se realizó en MATLAB/Simulink aplicando una entrada escalón al modelo de la planta. Los resultados permitieron observar el tiempo de establecimiento, el sobreimpulso y el error en estado estacionario. Posteriormente, se comparó la respuesta simulada con los criterios de diseño definidos para verificar si el modelo representa adecuadamente el comportamiento esperado del sistema.
+\end{instrucciones}
+
+\section{Ingeniería de diseño detallado}
+
+\begin{instrucciones}
+Este numeral presenta el diseño multidisciplinar detallado del sistema mecatrónico, integrando los módulos mecánico, eléctrico, electrónico, instrumentación, automatización y control. Evalúa principalmente el Resultado del Estudiante ABET SO 2, al evidenciar la capacidad de aplicar diseño de ingeniería para producir soluciones que satisfacen necesidades específicas considerando salud pública, seguridad, bienestar, factores globales, culturales, sociales, ambientales y económicos.
+\end{instrucciones}
+
+\subsection{Módulo mecánico: cadena cinemática y estructura}
+
+\begin{instrucciones}
+Presenta el diseño mecánico detallado del sistema, incluyendo la cadena cinemática, estructura, mecanismos, elementos de transmisión, soportes, uniones, selección de materiales y criterios de fabricación. Deben incluirse cálculos de esfuerzos, deformaciones, factores de seguridad y planos fabricables.
+
+\vspace{2mm}
+\noindent \textbf{Aspectos mínimos a incluir:}
+\begin{itemize}
+  \item Descripción de la cadena cinemática y componentes mecánicos principales.
+  \item Cálculos de fuerza, torque, esfuerzo, deformación, deflexión o fatiga, según aplique.
+  \item Selección y justificación de materiales considerando resistencia, peso, costo, disponibilidad y manufactura.
+  \item Planos de ensamble general y planos de detalle fabricables con nivel LOD 400.
+  \item Especificación de tolerancias, ajustes, acabados, métodos de unión y criterios de mantenimiento.
+\end{itemize}
+
+\vspace{2mm}
+\noindent \textbf{Tabla sugerida para cálculos mecánicos:}
+
+\begin{tablaCentrada}
+\begingroup
+\scriptsize
+\setlength{\tabcolsep}{3pt}
+\renewcommand{\arraystretch}{1.25}
+\begin{tabularx}{\textwidth}{>{\raggedright\arraybackslash}p{0.20\textwidth}>{\raggedright\arraybackslash}X>{\raggedright\arraybackslash}X>{\raggedright\arraybackslash}X}
+\toprule
+  \tablaEncabezado
+  \tablaHeader{Elemento mecánico}  & \tablaHeader{Carga o condición crítica}  & \tablaHeader{Criterio de diseño}  & \tablaHeader{Resultado esperado} \\
+\midrule
+  Estructura principal & Peso del sistema, vibración o carga externa. & Esfuerzo máximo, deformación y factor de seguridad. & Material seleccionado, espesor y geometría validada. \\
+  Eje o transmisión & Torque, velocidad angular y ciclos de trabajo. & Resistencia a torsión, flexión y fatiga. & Diámetro, material y tipo de soporte. \\
+  Soportes y uniones & Cargas estáticas o dinámicas en puntos de fijación. & Resistencia de pernos, soldadura o anclajes. & Tipo de unión, número de fijaciones y tolerancias. \\
+\bottomrule
+\end{tabularx}
+\endgroup
+\end{tablaCentrada}
+
+\noindent \textbf{Ejemplo de redacción:} El módulo mecánico se diseñó considerando la trayectoria de movimiento requerida, las cargas aplicadas y las restricciones geométricas del sistema. Se realizaron cálculos de esfuerzo y deformación para la estructura principal, se seleccionaron materiales con base en resistencia y disponibilidad, y se generaron planos de ensamble y detalle con tolerancias de fabricación para garantizar la construcción del prototipo.
+\end{instrucciones}
+
+\subsection{Módulo eléctrico e instrumentación}
+
+\begin{instrucciones}
+Presenta el diseño eléctrico, electrónico y de instrumentación del sistema. Incluye esquemas eléctricos de potencia y control, selección de sensores y actuadores, dimensionamiento de conductores, protecciones térmicas y magnéticas, acondicionamiento de señales, PCBs y criterios de seguridad eléctrica.
+
+\vspace{2mm}
+\noindent \textbf{Aspectos mínimos a incluir:}
+\begin{itemize}
+  \item Diagramas eléctricos de potencia y control industrial.
+  \item Selección de fuentes, sensores, actuadores, relés, contactores, variadores, drivers o módulos de comunicación.
+  \item Dimensionamiento de conductores según corriente, tensión, caída de voltaje y condiciones de instalación.
+  \item Selección de protecciones térmicas, magnéticas, fusibles, interruptores o dispositivos de seguridad.
+  \item Diseño de tarjetas de circuito impreso, si aplica, incluyendo ruteo, alimentación, tierra, conectores y acoplamientos de señal.
+  \item Acondicionamiento de señales analógicas o digitales, filtrado, aislamiento, adaptación de niveles y protección contra ruido.
+\end{itemize}
+
+\vspace{2mm}
+\noindent \textbf{Tabla sugerida para selección eléctrica e instrumentación:}
+
+\begin{tablaCentrada}
+\begingroup
+\scriptsize
+\setlength{\tabcolsep}{3pt}
+\renewcommand{\arraystretch}{1.25}
+\begin{tabularx}{\textwidth}{>{\raggedright\arraybackslash}p{0.20\textwidth}>{\raggedright\arraybackslash}X>{\raggedright\arraybackslash}X>{\raggedright\arraybackslash}X}
+\toprule
+  \tablaEncabezado
+  \tablaHeader{Componente}  & \tablaHeader{Criterio de selección}  & \tablaHeader{Parámetro principal}  & \tablaHeader{Justificación técnica} \\
+\midrule
+  Sensor & Rango de medición, precisión y compatibilidad eléctrica. & Señal de salida, resolución y tiempo de respuesta. & Adecuado para medir la variable crítica del proceso. \\
+  Actuador & Torque, fuerza, velocidad, potencia o ciclo de trabajo. & Tensión, corriente y capacidad mecánica. & Cumple la demanda de operación del sistema. \\
+  Protección eléctrica & Corriente nominal, corriente de falla y curva de disparo. & Valor térmico, magnético o fusible seleccionado. & Protege componentes y usuarios ante sobrecarga o cortocircuito. \\
+  PCB o tarjeta de interfaz & Separación, ruteo, alimentación y acoplamiento de señales. & Ancho de pista, conectores y niveles lógicos. & Permite conexión segura y ordenada entre sensores, actuadores y controlador. \\
+\bottomrule
+\end{tabularx}
+\endgroup
+\end{tablaCentrada}
+
+\noindent \textbf{Ejemplo de redacción:} El módulo eléctrico se diseñó a partir de la potencia requerida por los actuadores y las señales entregadas por los sensores. Se dimensionaron conductores y protecciones considerando la corriente nominal del sistema, se definieron esquemas de potencia y control, y se diseñó una tarjeta de interfaz para acondicionar señales y facilitar la conexión segura con el controlador.
+\end{instrucciones}
+
+\subsection{Módulo de automatización y control}
+
+\begin{instrucciones}
+Presenta el diseño del sistema de automatización, la arquitectura de control, la lógica secuencial, el algoritmo implementado y la estructura del software. Debe incluir el cálculo del controlador de lazo cerrado, diagramas de flujo de datos, mapas de memoria, estados de operación y criterios de seguridad lógica.
+
+\vspace{2mm}
+\noindent \textbf{Aspectos mínimos a incluir:}
+\begin{itemize}
+  \item Arquitectura general de control: sensores, controlador, actuadores, interfaz y comunicaciones.
+  \item Diseño y cálculo del algoritmo de control de lazo cerrado, si aplica.
+  \item Variables controladas, variables manipuladas, referencias, perturbaciones y restricciones.
+  \item Lógica secuencial de estados, condiciones de transición, alarmas y rutinas de seguridad.
+  \item Diagramas de flujo de datos, mapas de memoria, organización del código y estructura modular del software.
+  \item Validación del algoritmo mediante simulación, pruebas de escritorio o pruebas en prototipo.
+\end{itemize}
+
+\vspace{2mm}
+\noindent \textbf{Ejemplo de ley de control implementada como PID digital:}
+
+\[
+u(k) = K_p e(k) + K_i T_s \sum_{i=0}^{k} e(i) + \frac{K_d}{T_s}\left[e(k) - e(k-1)\right]
+\]
+
+\noindent donde $u(k)$ es la acción de control discreta, $e(k)$ es el error actual, $K_p$ la ganancia proporcional, $K_i$ la ganancia integral, $K_d$ la ganancia derivativa y $T_s$ el tiempo de muestreo.
+
+\vspace{2mm}
+\noindent \textbf{Tabla sugerida para arquitectura del software:}
+
+\begin{tablaCentrada}
+\begingroup
+\scriptsize
+\setlength{\tabcolsep}{3pt}
+\renewcommand{\arraystretch}{1.25}
+\begin{tabularx}{\textwidth}{>{\raggedright\arraybackslash}p{0.22\textwidth}>{\raggedright\arraybackslash}X>{\raggedright\arraybackslash}X>{\raggedright\arraybackslash}X}
+\toprule
+  \tablaEncabezado
+  \tablaHeader{Bloque de software}  & \tablaHeader{Función principal}  & \tablaHeader{Entradas y salidas}  & \tablaHeader{Criterio de validación} \\
+\midrule
+  Lectura de sensores & Adquirir y filtrar señales del proceso. & Entradas analógicas o digitales; variables medidas. & Lectura estable, calibrada y dentro del rango esperado. \\
+  Control de lazo cerrado & Calcular la acción de control según el error. & Referencia, medición y parámetros del controlador. & Seguimiento de referencia y estabilidad del sistema. \\
+  Máquina de estados & Gestionar arranque, operación, parada, falla y reinicio. & Estados, alarmas y condiciones de transición. & Secuencia segura y respuesta correcta ante eventos. \\
+  Comunicación e interfaz & Enviar datos, recibir comandos y reportar variables. & Tramas, registros, indicadores o interfaz de usuario. & Comunicación confiable y datos coherentes. \\
+\bottomrule
+\end{tabularx}
+\endgroup
+\end{tablaCentrada}
+
+\vspace{2mm}
+\noindent \textbf{Diagrama de bloques del sistema de control en lazo cerrado (obligatorio):} El equipo debe presentar un diagrama de bloques que muestre explícitamente la interacción entre planta, sensores, controlador, actuadores y perturbaciones externas consideradas en el diseño.
+
+\vspace{1mm}
+\noindent Este diagrama es evidencia directa del Criterion 5 de Mecatrónica ABET: ``integración de hardware y software para controlar sistemas mecánicos''. Un proyecto que no demuestre esta integración en lazo cerrado no satisface el criterio específico del programa.
+
+\vspace{2mm}
+\noindent \textbf{Ejemplo ASCII para el sistema de dosificación XYZ:}
+\begin{center}
+\ttfamily\small
+Referencia de masa $\rightarrow$ Controlador PID/ON-OFF $\rightarrow$ Actuador dosificador $\rightarrow$ Planta mecánica\\
+\hspace*{18mm}$\uparrow$\hspace*{56mm}$\downarrow$\\
+Perturbaciones: humedad/material $\leftarrow$ Sensor de peso/flujo $\leftarrow$ Tolva y descarga
+\end{center}
+
+\noindent \textbf{Ejemplo de redacción:} El módulo de automatización se estructuró mediante una arquitectura de control de lazo cerrado, donde el controlador calcula la acción sobre el actuador a partir del error entre la referencia y la variable medida. El software se organizó en bloques de lectura de sensores, cálculo de control, máquina de estados y comunicación, permitiendo una operación secuencial segura y verificable.
+\end{instrucciones}
+
+
+\subsection{Análisis de riesgos, seguridad y responsabilidad profesional}
+\begin{instrucciones}
+Esta sección documenta la responsabilidad ética y profesional del equipo de diseño (ABET SO3) y la consideración explícita del riesgo en el diseño de ingeniería (ABET SO4). Para proyectos mecatrónicos se adopta ISO 12100 como marco de referencia para identificar peligros, estimar riesgos y definir medidas de mitigación asociadas a maquinaria, actuadores, energía, operación humana e integración de subsistemas.
+
+\vspace{2mm}
+\noindent \textbf{Herramienta obligatoria: AMFE simplificado (Análisis de Modo y Efecto de Falla).}
+
+\begin{tablaCentrada}
+\begingroup
+\tiny
+\setlength{\tabcolsep}{1.8pt}
+\renewcommand{\arraystretch}{1.15}
+\begin{tabularx}{\textwidth}{>{\centering\arraybackslash}p{0.05\textwidth}>{\raggedright\arraybackslash}p{0.13\textwidth}>{\raggedright\arraybackslash}X>{\raggedright\arraybackslash}X>{\centering\arraybackslash}p{0.07\textwidth}>{\centering\arraybackslash}p{0.08\textwidth}>{\centering\arraybackslash}p{0.09\textwidth}>{\centering\arraybackslash}p{0.07\textwidth}>{\raggedright\arraybackslash}X}
+\toprule
+  \tablaEncabezado
+  \tablaHeader{ID} & \tablaHeader{Componente o subsistema} & \tablaHeader{Modo de falla potencial} & \tablaHeader{Efecto del fallo} & \tablaHeader{S (1--10)} & \tablaHeader{P (1--10)} & \tablaHeader{D (1--10)} & \tablaHeader{NPR} & \tablaHeader{Acción de mitigación adoptada} \\
+\midrule
+  F-01 & Motor dosificador & Atasco por compactación de material. & Sobrecorriente, parada del proceso o dosificación incompleta. & 8 & 5 & 4 & 160 & Sensor de corriente, paro automático, limpieza de tolva y alarma visual. \\
+  F-02 & Sensor de peso & Lectura desviada por mala calibración. & Error de masa dosificada y rechazo del lote. & 7 & 4 & 5 & 140 & Procedimiento de calibración, tara automática y verificación con patrón. \\
+  F-03 & Controlador & Reinicio inesperado por caída de tensión. & Pérdida de secuencia y posible descarga no controlada. & 8 & 3 & 5 & 120 & Fuente regulada, fusible, rutina de arranque seguro y memoria de estado. \\
+\bottomrule
+\end{tabularx}
+\endgroup
+\end{tablaCentrada}
+
+\begin{advertenciaABET}
+El Número de Prioridad de Riesgo (NPR) mayor a 100 exige acción de mitigación documentada en el diseño. Esta herramienta es evidencia directa de ABET SO4 ante pares evaluadores (PEVs).
+\end{advertenciaABET}
+
+\vspace{2mm}
+\noindent \textbf{Matriz de responsabilidad ética y contexto global:}
+
+\begin{tablaCentrada}
+\begingroup
+\tiny
+\setlength{\tabcolsep}{2pt}
+\renewcommand{\arraystretch}{1.2}
+\begin{tabularx}{\textwidth}{>{\raggedright\arraybackslash}p{0.24\textwidth}>{\raggedright\arraybackslash}X>{\raggedright\arraybackslash}X>{\raggedright\arraybackslash}p{0.18\textwidth}}
+\toprule
+  \tablaEncabezado
+  \tablaHeader{Dimensión} & \tablaHeader{Riesgo o consideración identificada} & \tablaHeader{Medida adoptada en el diseño} & \tablaHeader{Norma o referente aplicado} \\
+\midrule
+  Seguridad del operador y usuarios finales & Contacto con partes móviles y arranque inesperado. & Resguardos, paro de emergencia, enclavamiento lógico y señalización. & ISO 12100. \\
+  Impacto ambiental & Consumo energético y disposición final de componentes. & Selección de fuente eficiente y plan de separación de RAEE. & Política RAEE Colombia. \\
+  Impacto social y cultural & Automatización percibida como reemplazo de empleo local. & Diseño orientado a asistencia operativa, capacitación y operación supervisada. & Ética profesional NSPE/ABET. \\
+  Impacto económico regional & Costo de implementación para pequeñas plantas colombianas. & Componentes disponibles localmente y BOM con alternativas equivalentes. & Análisis de ingeniería económica. \\
+  Privacidad de datos & Registro de operadores o datos de producción. & Minimización de datos y control de acceso si se implementa HMI o registro. & Buenas prácticas de protección de datos. \\
+  Propiedad intelectual y licenciamiento & Uso de librerías, CAD o código abierto sin licencia clara. & Inventario de licencias y atribución en repositorio. & Licencias de software aplicables. \\
+  Obsolescencia y residuos electrónicos (RAEE) & Reemplazo de sensores, controladores y tarjetas. & Diseño modular, documentación de repuestos y disposición responsable. & Lineamientos RAEE. \\
+\bottomrule
+\end{tabularx}
+\endgroup
+\end{tablaCentrada}
+
+\begin{advertenciaABET}
+ABET exige que el estudiante CONSIDERE estos impactos en su proceso de diseño. No son opcionales. La frase ``si aplica'' ha sido eliminada de esta plantilla en la v4. Todo proyecto tiene al menos tres dimensiones aplicables.
+\end{advertenciaABET}
+
+\vspace{2mm}
+\noindent \textbf{Ejemplo aplicado al sistema de dosificación XYZ:} El AMFE muestra que el atasco del motor y la descalibración del sensor tienen NPR mayor a 100; por tanto, se incorporan sensor de corriente, alarma, paro automático y protocolo de calibración. En responsabilidad ética, el diseño incluye resguardos físicos, capacitación al operador, componentes disponibles localmente y manejo previsto de residuos electrónicos al finalizar la vida útil del prototipo.
+\end{instrucciones}
+
+\section{Implementación y validación experimental}
+
+\begin{instrucciones}
+Este numeral presenta la construcción del prototipo, el entorno de prueba, el protocolo experimental y el análisis de los datos obtenidos durante la validación física del sistema. Evalúa principalmente el Resultado del Estudiante ABET SO 6, al evidenciar la capacidad de desarrollar y conducir experimentación apropiada, analizar e interpretar datos, y usar juicio de ingeniería para obtener conclusiones.
+\end{instrucciones}
+
+\subsection{Construcción del prototipo y entorno de prueba}
+
+\begin{instrucciones}
+Documenta la construcción del prototipo o banco de pruebas utilizado para validar el proyecto. Incluye registro fotográfico, planos de integración final, descripción del montaje, conexiones de hardware, integración del software y condiciones del entorno donde se realizaron las pruebas.
+
+\vspace{2mm}
+\noindent \textbf{Aspectos mínimos a incluir:}
+\begin{itemize}
+  \item Fotografías del prototipo construido, banco de prueba o integración final.
+  \item Planos, diagramas o esquemas de conexión del hardware y software.
+  \item Descripción de sensores, actuadores, controlador, estructura y elementos auxiliares instalados.
+  \item Condiciones del entorno de prueba: laboratorio, simulador, planta piloto, carga aplicada, alimentación y restricciones de seguridad.
+  \item Evidencia de integración entre módulos mecánico, eléctrico, electrónico y de control.
+\end{itemize}
+
+\vspace{2mm}
+\noindent \textbf{Tabla sugerida de integración del prototipo:}
+
+\begin{tablaCentrada}
+\begingroup
+\scriptsize
+\setlength{\tabcolsep}{3pt}
+\renewcommand{\arraystretch}{1.25}
+\begin{tabularx}{\textwidth}{>{\raggedright\arraybackslash}p{0.22\textwidth}>{\raggedright\arraybackslash}X>{\raggedright\arraybackslash}X>{\raggedright\arraybackslash}X}
+\toprule
+  \tablaEncabezado
+  \tablaHeader{Módulo integrado}  & \tablaHeader{Componentes instalados}  & \tablaHeader{Evidencia requerida}  & \tablaHeader{Estado de integración} \\
+\midrule
+  Mecánico & Estructura, soportes, transmisión, actuadores o elementos móviles. & Fotografías, planos de ensamble y verificación dimensional. & Pendiente, en proceso o completado. \\
+  Eléctrico/electrónico & Fuente, protecciones, sensores, actuadores, PCB o cableado. & Esquemas eléctricos, pruebas de continuidad y registro de conexión. & Pendiente, en proceso o completado. \\
+  Control y software & Firmware, lógica de control, interfaz o comunicaciones. & Código, diagramas de flujo, pruebas de lectura y activación. & Pendiente, en proceso o completado. \\
+\bottomrule
+\end{tabularx}
+\endgroup
+\end{tablaCentrada}
+
+\noindent \textbf{Ejemplo de redacción:} El prototipo fue construido integrando la estructura mecánica, el sistema de actuación, los sensores de medición y el controlador programado. El montaje final se verificó mediante pruebas de continuidad, revisión de conexiones, inspección visual y activación individual de cada módulo antes de ejecutar los ensayos funcionales.
+\end{instrucciones}
+
+\subsection{Protocolo de pruebas y diseño de experimentos}
+
+\begin{instrucciones}
+Describe el diseño metodológico de los ensayos físicos realizados para verificar el cumplimiento de los requerimientos iniciales. El protocolo debe indicar qué se mide, cómo se mide, bajo qué condiciones, cuántas repeticiones se ejecutan y cuáles son los criterios de aceptación.
+
+\vspace{2mm}
+\noindent \textbf{Aspectos mínimos a incluir:}
+\begin{itemize}
+  \item Objetivo de cada prueba experimental.
+  \item Variables independientes, dependientes y controladas.
+  \item Instrumentos de medición, resolución, rango y procedimiento de calibración.
+  \item Número de repeticiones, condiciones de entrada y condiciones de carga.
+  \item Criterios de aceptación asociados a requerimientos iniciales u objetivos específicos.
+  \item Consideraciones de seguridad antes, durante y después de la prueba.
+\end{itemize}
+
+\vspace{2mm}
+\noindent \textbf{Tabla sugerida para el protocolo de pruebas:}
+
+\begin{tablaCentrada}
+\begingroup
+\scriptsize
+\setlength{\tabcolsep}{3pt}
+\renewcommand{\arraystretch}{1.25}
+\begin{tabularx}{\textwidth}{>{\raggedright\arraybackslash}p{0.18\textwidth}>{\raggedright\arraybackslash}X>{\raggedright\arraybackslash}X>{\raggedright\arraybackslash}X>{\raggedright\arraybackslash}p{0.16\textwidth}}
+\toprule
+  \tablaEncabezado
+  \tablaHeader{Prueba}  & \tablaHeader{Variable medida}  & \tablaHeader{Condición experimental}  & \tablaHeader{Instrumento o método}  & \tablaHeader{Criterio de aceptación} \\
+\midrule
+  Prueba funcional inicial & Activación de actuadores y lectura de sensores. & Sistema energizado sin carga o con carga mínima. & Inspección, monitor serial o interfaz de usuario. & Todos los módulos responden correctamente. \\
+  Prueba de desempeño & Velocidad, posición, corriente, fuerza, temperatura o variable principal. & Entrada definida y carga nominal. & Sensor, multímetro, tacómetro, encoder, balanza o instrumento equivalente. & Error menor al valor permitido por el requerimiento. \\
+  Prueba de repetibilidad & Variación entre mediciones repetidas. & Mínimo tres repeticiones bajo la misma condición. & Registro tabulado y análisis estadístico. & Desviación estándar dentro del límite aceptado. \\
+\bottomrule
+\end{tabularx}
+\endgroup
+\end{tablaCentrada}
+
+\noindent \textbf{Ejemplo de redacción:} Las pruebas experimentales se diseñaron para verificar el cumplimiento de los requerimientos de precisión, estabilidad y tiempo de respuesta. Cada ensayo se ejecutó bajo condiciones controladas, registrando la variable principal del sistema y repitiendo la medición para evaluar la repetibilidad del prototipo.
+\end{instrucciones}
+
+\subsection{Análisis de datos experimentales}
+
+\begin{instrucciones}
+Presenta gráficas y análisis de las variables físicas medidas experimentalmente, como velocidad de motores, consumo de corriente, temperatura, fuerza, desplazamiento, error de posición o tiempo de respuesta. Usa herramientas de estadística matemática para interpretar precisión, repetibilidad, dispersión y cumplimiento de requerimientos.
+
+\vspace{2mm}
+\noindent \textbf{Aspectos mínimos a incluir:}
+\begin{itemize}
+  \item Tabla de datos experimentales crudos o procesados.
+  \item Gráficas de las variables medidas frente al tiempo, entrada, carga o condición experimental.
+  \item Cálculo de media, desviación estándar, error absoluto, error porcentual o coeficiente de variación.
+  \item Comparación entre datos experimentales, simulación y requerimientos iniciales.
+  \item Discusión de causas de error, incertidumbre, ruido, saturación o limitaciones del montaje.
+  \item Conclusión técnica sobre precisión, repetibilidad y validez del diseño.
+\end{itemize}
+
+\vspace{2mm}
+\noindent \textbf{Indicadores estadísticos sugeridos:}
+
+\[
+\bar{x} = \frac{1}{n}\sum_{i=1}^{n} x_i
+\]
+
+\[
+s = \sqrt{\frac{1}{n-1}\sum_{i=1}^{n}\left(x_i - \bar{x}\right)^2}
+\]
+
+\[
+\mathrm{Error\ porcentual} = \left|\frac{x_{\mathrm{medido}} - x_{\mathrm{referencia}}}{x_{\mathrm{referencia}}}\right| \times 100\%
+\]
+
+\vspace{2mm}
+\noindent \textbf{Tabla sugerida para análisis de datos:}
+
+\begin{tablaCentrada}
+\begingroup
+\scriptsize
+\setlength{\tabcolsep}{3pt}
+\renewcommand{\arraystretch}{1.25}
+\begin{tabularx}{\textwidth}{>{\raggedright\arraybackslash}p{0.18\textwidth}>{\raggedright\arraybackslash}X>{\raggedright\arraybackslash}X>{\raggedright\arraybackslash}X>{\raggedright\arraybackslash}p{0.18\textwidth}}
+\toprule
+  \tablaEncabezado
+  \tablaHeader{Variable}  & \tablaHeader{Valor de referencia}  & \tablaHeader{Valor promedio medido}  & \tablaHeader{Desviación estándar o error}  & \tablaHeader{Cumplimiento} \\
+\midrule
+  Velocidad del motor & & & & Cumple / No cumple. \\
+  Consumo de corriente & & & & Cumple / No cumple. \\
+  Error de posición & & & & Cumple / No cumple. \\
+  Tiempo de respuesta & & & & Cumple / No cumple. \\
+\bottomrule
+\end{tabularx}
+\endgroup
+\end{tablaCentrada}
+
+\noindent \textbf{Ejemplo de redacción:} Los datos experimentales fueron procesados calculando el promedio, la desviación estándar y el error porcentual respecto al valor de referencia. Las gráficas de respuesta permitieron identificar la estabilidad del sistema y la variación entre repeticiones. Con base en estos resultados se determinó si el prototipo cumple los requerimientos de precisión y repetibilidad definidos al inicio del proyecto.
+\end{instrucciones}
+
+
+\section{Ingeniería económica y finanzas del proyecto}
+
+\begin{instrucciones}
+Este capítulo presenta la estimación de costos, la lista de materiales y el análisis de viabilidad económica del proyecto. Evalúa principalmente el Resultado del Estudiante ABET SO 2 en la dimensión económica, al evidenciar que el diseño de ingeniería considera restricciones de costo, factibilidad financiera, selección justificada de componentes y sostenibilidad económica de la solución propuesta.
+\end{instrucciones}
+
+\subsection{Lista de materiales y costos detallados (BOM)}
+
+\begin{instrucciones}
+Elabora una lista de materiales, equipos, componentes, herramientas y servicios requeridos para construir o implementar el proyecto. La tabla debe permitir identificar la cantidad requerida, la especificación técnica, el proveedor consultado, el costo unitario y el costo total de cada elemento. Incluye únicamente valores verificables mediante cotizaciones, facturas, catálogos técnicos o precios de mercado actualizados.
+
+\vspace{2mm}
+\noindent \textbf{Aspectos mínimos a incluir:}
+\begin{itemize}
+  \item Componentes mecánicos, eléctricos, electrónicos, sensores, actuadores, controladores y elementos estructurales.
+  \item Cantidad, unidad de medida, referencia comercial, especificación técnica y proveedor de cada componente.
+  \item Costos unitarios, costos totales, impuestos, transporte, fabricación, servicios externos y consumibles.
+  \item Diferenciación entre costos directos, costos indirectos, contingencias y costos de operación, si aplica.
+  \item Fuente de los precios utilizados: cotización, factura, catálogo, página comercial o proveedor local.
+\end{itemize}
+
+\vspace{2mm}
+\noindent \textbf{Tabla sugerida para la lista de materiales:}
+
+\begin{tablaCentrada}
+\begingroup
+\scriptsize
+\setlength{\tabcolsep}{2.5pt}
+\renewcommand{\arraystretch}{1.25}
+\begin{tabularx}{\textwidth}{>{\raggedright\arraybackslash}p{0.14\textwidth}>{\raggedright\arraybackslash}X>{\centering\arraybackslash}p{0.09\textwidth}>{\raggedright\arraybackslash}p{0.15\textwidth}>{\raggedleft\arraybackslash}p{0.12\textwidth}>{\raggedleft\arraybackslash}p{0.12\textwidth}}
+\toprule
+  \tablaEncabezado
+  \tablaHeader{Ítem o componente}  & \tablaHeader{Especificación técnica}  & \tablaHeader{Cantidad}  & \tablaHeader{Proveedor}  & \tablaHeader{Costo unitario}  & \tablaHeader{Costo total} \\
+\midrule
+  Estructura mecánica & Material, dimensiones, proceso de fabricación o referencia comercial. & & & & \\
+  Sensor principal & Rango de medición, resolución, alimentación y tipo de salida. & & & & \\
+  Actuador & Potencia, torque, velocidad, voltaje o capacidad nominal. & & & & \\
+  Controlador & Referencia, entradas, salidas, comunicación y capacidad de procesamiento. & & & & \\
+  Fuente y protecciones & Voltaje, corriente nominal, fusibles, breakers o protecciones requeridas. & & & & \\
+  Servicios o fabricación & Corte, mecanizado, impresión 3D, ensamble, calibración o transporte. & & & & \\
+\bottomrule
+\end{tabularx}
+\endgroup
+\end{tablaCentrada}
+
+\vspace{2mm}
+\noindent \textbf{Cálculos sugeridos:}
+
+\[
+C_{\mathrm{directo}} = \sum_{i=1}^{n} q_i C_i
+\]
+
+\[
+C_{\mathrm{total}} = C_{\mathrm{directo}} + C_{\mathrm{indirecto}} + C_{\mathrm{contingencia}}
+\]
+
+\noindent donde $q_i$ representa la cantidad del componente $i$ y $C_i$ corresponde al costo unitario asociado. La contingencia puede estimarse como un porcentaje del costo directo cuando existan incertidumbres de compra, transporte, variación de precios o fabricación.
+
+\vspace{2mm}
+\noindent \textbf{Ejemplo de redacción:} La lista de materiales se estructuró clasificando los componentes por módulo funcional y registrando las especificaciones mínimas requeridas para el desempeño del sistema. Los costos directos se calcularon multiplicando la cantidad requerida por el costo unitario de cada componente, mientras que los costos indirectos y de contingencia se adicionaron para estimar la inversión total del prototipo.
+\end{instrucciones}
+
+\subsection{Viabilidad económica}
+
+\begin{instrucciones}
+Desarrolla un análisis financiero que demuestre la justificación técnico-económica del diseño. El análisis debe relacionar la inversión inicial con los beneficios esperados, ahorros operativos, reducción de pérdidas, aumento de productividad o ingresos proyectados. Utiliza indicadores como Valor Presente Neto (VPN), Tasa Interna de Retorno (TIR) y tiempo de recuperación de la inversión o \textsl{Payback}.
+
+\vspace{2mm}
+\noindent \textbf{Aspectos mínimos a incluir:}
+\begin{itemize}
+  \item Inversión inicial estimada a partir del BOM y de los costos de implementación.
+  \item Costos de operación, mantenimiento, consumo energético, reposición de componentes o calibración.
+  \item Beneficios económicos esperados: ahorro de tiempo, reducción de desperdicio, disminución de fallas, incremento de producción o mejora de calidad.
+  \item Flujo de caja proyectado por periodo, horizonte de evaluación y tasa de descuento utilizada.
+  \item Cálculo e interpretación del VPN, la TIR y el tiempo de recuperación de la inversión.
+  \item Decisión final de viabilidad: viable, viable con ajustes o no viable bajo las condiciones evaluadas.
+\end{itemize}
+
+\vspace{2mm}
+\noindent \textbf{Indicadores financieros sugeridos:}
+
+\[
+\mathrm{VPN} = -I_0 + \sum_{t=1}^{N} \frac{F_t}{\left(1+r\right)^t}
+\]
+
+\[
+0 = -I_0 + \sum_{t=1}^{N} \frac{F_t}{\left(1+\mathrm{TIR}\right)^t}
+\]
+
+\[
+\mathrm{Payback} = \frac{I_0}{F_{\mathrm{neto\ anual}}}
+\]
+
+\noindent donde $I_0$ es la inversión inicial, $F_t$ representa el flujo neto de caja en el periodo $t$, $r$ es la tasa de descuento y $N$ es el horizonte de evaluación del proyecto.
+
+\vspace{2mm}
+\noindent \textbf{Tabla sugerida para el flujo de caja:}
+
+\begin{tablaCentrada}
+\begingroup
+\scriptsize
+\setlength{\tabcolsep}{3pt}
+\renewcommand{\arraystretch}{1.25}
+\begin{tabularx}{\textwidth}{>{\centering\arraybackslash}p{0.10\textwidth}>{\raggedleft\arraybackslash}p{0.16\textwidth}>{\raggedleft\arraybackslash}p{0.16\textwidth}>{\raggedleft\arraybackslash}p{0.16\textwidth}>{\raggedleft\arraybackslash}p{0.16\textwidth}>{\raggedright\arraybackslash}X}
+\toprule
+  \tablaEncabezado
+  \tablaHeader{Periodo}  & \tablaHeader{Ingresos o ahorros}  & \tablaHeader{Costos de operación}  & \tablaHeader{Flujo neto}  & \tablaHeader{Flujo descontado}  & \tablaHeader{Observaciones} \\
+\midrule
+  0 & & & & & Inversión inicial. \\
+  1 & & & & & Primer periodo de operación. \\
+  2 & & & & & Operación proyectada. \\
+  3 & & & & & Operación proyectada. \\
+\bottomrule
+\end{tabularx}
+\endgroup
+\end{tablaCentrada}
+
+\vspace{2mm}
+\noindent \textbf{Tabla sugerida para indicadores de viabilidad:}
+
+\begin{tablaCentrada}
+\begingroup
+\scriptsize
+\setlength{\tabcolsep}{3pt}
+\renewcommand{\arraystretch}{1.25}
+\begin{tabularx}{\textwidth}{>{\raggedright\arraybackslash}p{0.18\textwidth}>{\raggedright\arraybackslash}X>{\raggedright\arraybackslash}X>{\raggedright\arraybackslash}p{0.22\textwidth}}
+\toprule
+  \tablaEncabezado
+  \tablaHeader{Indicador}  & \tablaHeader{Valor obtenido}  & \tablaHeader{Interpretación}  & \tablaHeader{Criterio de decisión} \\
+\midrule
+  Valor Presente Neto (VPN) & & Mide el valor económico generado por el proyecto en valor presente. & Viable si el VPN es positivo. \\
+  Tasa Interna de Retorno (TIR) & & Representa la rentabilidad porcentual estimada del proyecto. & Viable si supera la tasa mínima aceptada. \\
+  Payback & & Indica el tiempo requerido para recuperar la inversión inicial. & Viable si es menor al horizonte máximo definido. \\
+\bottomrule
+\end{tabularx}
+\endgroup
+\end{tablaCentrada}
+
+\noindent \textbf{Ejemplo de redacción:} La viabilidad económica se evaluó comparando la inversión inicial del prototipo con los ahorros e ingresos proyectados durante el horizonte de análisis. A partir del flujo de caja se calcularon el VPN, la TIR y el tiempo de recuperación de la inversión. Estos indicadores permitieron determinar si la solución propuesta es justificable desde el punto de vista técnico-económico y si los beneficios esperados compensan los costos de implementación y operación.
+\end{instrucciones}
+
+
+\chapter{Conclusiones y trabajos futuros}
+
+\begin{instrucciones}
+Este capítulo presenta el cierre técnico del proyecto, evaluando la efectividad de la solución desarrollada frente al problema planteado, los objetivos definidos y las restricciones de diseño. También documenta las limitaciones identificadas durante el desarrollo y propone recomendaciones para trabajos futuros, mejoras, escalamiento o continuidad investigativa.
+\end{instrucciones}
+
+\section{Conclusiones técnicas}
+
+\begin{instrucciones}
+Redacta conclusiones técnicas basadas en los resultados obtenidos durante el diseño, simulación, implementación, validación experimental y análisis económico del proyecto. Cada conclusión debe responder a una evidencia concreta y debe evitar afirmaciones generales sin soporte. No introduzcas información nueva que no haya sido presentada en capítulos anteriores.
+
+\vspace{2mm}
+\noindent \textbf{Aspectos mínimos a incluir:}
+\begin{itemize}
+  \item Evaluación final del cumplimiento del objetivo general y de los objetivos específicos.
+  \item Comparación entre el problema inicial, los requerimientos de diseño y el desempeño alcanzado por la solución.
+  \item Síntesis de los resultados técnicos más importantes: precisión, estabilidad, eficiencia, capacidad, seguridad, costos o variable principal del proyecto.
+  \item Análisis del comportamiento de la solución bajo las restricciones impuestas: presupuesto, tiempo, materiales, seguridad, entorno de operación o disponibilidad tecnológica.
+  \item Juicio de ingeniería sobre la efectividad global de la solución y su pertinencia para el contexto definido.
+\end{itemize}
+
+\vspace{2mm}
+\noindent \textbf{Tabla sugerida para soportar las conclusiones:}
+
+\begin{tablaCentrada}
+\begingroup
+\scriptsize
+\setlength{\tabcolsep}{3pt}
+\renewcommand{\arraystretch}{1.25}
+\begin{tabularx}{\textwidth}{>{\raggedright\arraybackslash}p{0.20\textwidth}>{\raggedright\arraybackslash}X>{\raggedright\arraybackslash}X>{\raggedright\arraybackslash}X}
+\toprule
+  \tablaEncabezado
+  \tablaHeader{Criterio evaluado}  & \tablaHeader{Evidencia o resultado obtenido}  & \tablaHeader{Relación con el objetivo}  & \tablaHeader{Conclusión técnica} \\
+\midrule
+  Desempeño funcional & & & \\
+  Precisión o calidad de respuesta & & & \\
+  Integración del sistema & & & \\
+  Restricciones de diseño & & & \\
+\bottomrule
+\end{tabularx}
+\endgroup
+\end{tablaCentrada}
+
+\noindent \textbf{Ejemplo de redacción:} Con base en las pruebas realizadas, se concluyó que la solución desarrollada respondió al problema planteado al integrar los módulos mecánico, electrónico y de control en un sistema funcional. El desempeño obtenido permitió verificar el cumplimiento de los requerimientos principales dentro de las restricciones de costo, tiempo y disponibilidad de componentes definidas para el proyecto.
+\end{instrucciones}
+
+\section{Limitaciones de la solución}
+
+\begin{instrucciones}
+Describe de forma objetiva las limitaciones técnicas, metodológicas, económicas o experimentales que condicionan el alcance de la solución propuesta. Una limitación no debe presentarse como falla del trabajo, sino como una frontera clara de validez, operación o generalización de los resultados.
+
+\vspace{2mm}
+\noindent \textbf{Aspectos mínimos a incluir:}
+\begin{itemize}
+  \item Restricciones del prototipo, escala, materiales, sensores, actuadores, controlador o software empleado.
+  \item Condiciones de prueba que no pudieron reproducirse completamente en laboratorio o banco experimental.
+  \item Incertidumbre en mediciones, calibración, repetibilidad, ruido, disponibilidad de datos o número de ensayos.
+  \item Limitaciones económicas, de tiempo, fabricación, seguridad, mantenimiento o acceso a equipos especializados.
+  \item Impacto de cada limitación sobre la interpretación de los resultados y la aplicación de la solución en escenarios reales.
+\end{itemize}
+
+\vspace{2mm}
+\noindent \textbf{Tabla sugerida para limitaciones:}
+
+\begin{tablaCentrada}
+\begingroup
+\scriptsize
+\setlength{\tabcolsep}{3pt}
+\renewcommand{\arraystretch}{1.25}
+\begin{tabularx}{\textwidth}{>{\raggedright\arraybackslash}p{0.22\textwidth}>{\raggedright\arraybackslash}X>{\raggedright\arraybackslash}X>{\raggedright\arraybackslash}X}
+\toprule
+  \tablaEncabezado
+  \tablaHeader{Limitación identificada}  & \tablaHeader{Causa principal}  & \tablaHeader{Impacto en la solución}  & \tablaHeader{Posible mitigación} \\
+\midrule
+  Escala del prototipo & & & \\
+  Condiciones de prueba & & & \\
+  Instrumentación o medición & & & \\
+  Presupuesto o disponibilidad & & & \\
+\bottomrule
+\end{tabularx}
+\endgroup
+\end{tablaCentrada}
+
+\noindent \textbf{Ejemplo de redacción:} La solución presenta limitaciones asociadas al alcance del prototipo y a las condiciones controladas del entorno de prueba. Por esta razón, los resultados obtenidos deben interpretarse dentro del rango de operación evaluado y no extrapolarse directamente a condiciones industriales sin ejecutar pruebas adicionales de carga, durabilidad y seguridad.
+\end{instrucciones}
+
+\section{Recomendaciones para trabajos futuros}
+
+\begin{instrucciones}
+Propón acciones concretas para continuar, mejorar o escalar el proyecto. Las recomendaciones deben derivarse de las conclusiones y limitaciones identificadas, indicando qué debería hacerse, por qué es importante y qué impacto técnico tendría sobre el desempeño o aplicabilidad de la solución.
+
+\vspace{2mm}
+\noindent \textbf{Aspectos mínimos a incluir:}
+\begin{itemize}
+  \item Mejoras de diseño mecánico, eléctrico, electrónico, instrumentación, automatización, control o interfaz de usuario.
+  \item Ampliación del protocolo experimental con más repeticiones, nuevas cargas, pruebas de durabilidad o validación en ambiente real.
+  \item Optimización de costos, consumo energético, mantenimiento, manufactura, seguridad o confiabilidad del sistema.
+  \item Escalamiento del prototipo hacia una versión industrial, comercial, modular o replicable.
+  \item Integración de nuevas tecnologías, sensores, algoritmos de control, comunicación, análisis de datos o monitoreo remoto.
+\end{itemize}
+
+\vspace{2mm}
+\noindent \textbf{Tabla sugerida para recomendaciones:}
+
+\begin{tablaCentrada}
+\begingroup
+\scriptsize
+\setlength{\tabcolsep}{3pt}
+\renewcommand{\arraystretch}{1.25}
+\begin{tabularx}{\textwidth}{>{\raggedright\arraybackslash}p{0.22\textwidth}>{\raggedright\arraybackslash}X>{\raggedright\arraybackslash}X>{\raggedright\arraybackslash}p{0.16\textwidth}}
+\toprule
+  \tablaEncabezado
+  \tablaHeader{Recomendación}  & \tablaHeader{Justificación técnica}  & \tablaHeader{Impacto esperado}  & \tablaHeader{Prioridad} \\
+\midrule
+  Optimización del diseño & & & Alta / Media / Baja \\
+  Nuevas pruebas experimentales & & & Alta / Media / Baja \\
+  Mejora del sistema de control & & & Alta / Media / Baja \\
+  Escalamiento o implementación real & & & Alta / Media / Baja \\
+\bottomrule
+\end{tabularx}
+\endgroup
+\end{tablaCentrada}
+
+\noindent \textbf{Ejemplo de redacción:} Como trabajo futuro se recomienda ampliar la validación experimental mediante pruebas prolongadas bajo diferentes condiciones de carga y operación. También se sugiere optimizar la selección de componentes y fortalecer el sistema de control para mejorar la precisión, confiabilidad y facilidad de implementación de la solución en un entorno real.
+\end{instrucciones}
+
+
+\chapter{Referencias bibliográficas}
+
+\begin{instrucciones}
+Este capítulo debe presentar la lista completa de fuentes de información consultadas durante el desarrollo del proyecto, incluyendo artículos científicos, libros, tesis, normas técnicas, fichas técnicas, manuales de fabricantes, sitios web institucionales y bases de patentes. Todas las referencias deben redactarse rigurosamente bajo el estilo IEEE, numerarse en orden de aparición en el documento y corresponder únicamente a fuentes citadas en el texto.
+
+\vspace{2mm}
+\noindent \textbf{Criterios mínimos de presentación:}
+\begin{itemize}
+  \item Usar numeración consecutiva entre corchetes, por ejemplo: [1], [2], [3].
+  \item Ordenar las referencias según su primera aparición en el documento, no alfabéticamente.
+  \item Verificar que toda fuente incluida tenga una cita correspondiente dentro del texto.
+  \item Incluir datos completos: autores, título, tipo de fuente, editorial o institución, revista o conferencia, volumen, número, páginas, año, DOI, URL o fecha de consulta, según aplique.
+  \item Referenciar normas técnicas con código, título, entidad emisora, lugar y año de publicación.
+  \item Referenciar patentes con inventor, título, país u oficina, número de patente, fecha de publicación y base consultada.
+  \item Priorizar fuentes técnicas confiables: IEEE Xplore, ScienceDirect, SpringerLink, Scopus, Google Scholar, Espacenet, Google Patents, WIPO Patentscope, USPTO, normas técnicas y documentación oficial de fabricantes.
+\end{itemize}
+
+\vspace{2mm}
+\noindent \textbf{Formatos guía en estilo IEEE:}
+
+\begin{itemize}
+  \item \textbf{Artículo científico:} [1] A. Apellido and B. Apellido, ``Título del artículo,'' \textsl{Nombre de la Revista}, vol. xx, no. x, pp. xx--xx, año, doi: xx.
+  \item \textbf{Libro:} [2] A. Apellido, \textsl{Título del libro}, x ed. Ciudad, País: Editorial, año.
+  \item \textbf{Conferencia:} [3] A. Apellido, ``Título del trabajo,'' in \textsl{Proc. Nombre de la Conferencia}, Ciudad, País, año, pp. xx--xx.
+  \item \textbf{Tesis:} [4] A. Apellido, ``Título de la tesis,'' Tesis de grado o maestría, Programa, Universidad, Ciudad, País, año.
+  \item \textbf{Norma técnica:} [5] Entidad emisora, \textsl{Código de la norma: Título de la norma}, Ciudad, País, año.
+  \item \textbf{Ficha técnica o manual:} [6] Fabricante, \textsl{Nombre del componente o manual}, versión, año. [En línea]. Disponible: URL. [Accedido: día-mes-año].
+  \item \textbf{Patente:} [7] A. Inventor, ``Título de la patente,'' País u oficina, Patente no. xxxxxxx, fecha de publicación.
+  \item \textbf{Sitio web técnico:} [8] Institución o empresa, ``Título de la página,'' año. [En línea]. Disponible: URL. [Accedido: día-mes-año].
+\end{itemize}
+
+\vspace{2mm}
+\noindent \textbf{Plantilla editable:}
+\end{instrucciones}
+
+\begin{thebibliography}{99}
+
+\bibitem{ref_articulo}
+A. Apellido and B. Apellido, ``Título del artículo consultado,'' \textsl{Nombre de la Revista}, vol. xx, no. x, pp. xx--xx, año, doi: xx.xxxx/xxxxx.
+
+\bibitem{ref_libro}
+A. Apellido, \textsl{Título del libro}, x ed. Ciudad, País: Editorial, año.
+
+\bibitem{ref_norma}
+Entidad emisora, \textsl{Código de la norma: Título de la norma técnica}, Ciudad, País, año.
+
+\bibitem{ref_datasheet}
+Fabricante, \textsl{Nombre del componente o ficha técnica}, versión, año. [En línea]. Disponible: URL. [Accedido: día-mes-año].
+
+\bibitem{ref_patente}
+A. Inventor, ``Título de la patente,'' País u oficina de patentes, Patente no. xxxxxxx, fecha de publicación.
+
+\bibitem{ref_web}
+Institución o empresa, ``Título de la página o recurso técnico,'' año. [En línea]. Disponible: URL. [Accedido: día-mes-año].
+
+\end{thebibliography}
+
+
+\appendix
+\renewcommand{\appendixname}{Anexo}
+
+\chapter*{Anexos}
+\addcontentsline{toc}{chapter}{Anexos obligatorios}
+
+\begin{instrucciones}
+Esta sección reúne los anexos obligatorios del proyecto. Los anexos deben incluir evidencia técnica complementaria que respalde el diseño, la construcción, la implementación y la validación del sistema, sin interrumpir la lectura del cuerpo principal del documento. Cada anexo debe estar identificado, ser legible, estar referenciado desde el texto principal cuando corresponda y conservar coherencia con los planos, códigos, componentes y resultados presentados en los capítulos anteriores.
+\end{instrucciones}
+
+\chapter{Planos de ingeniería normalizados legibles}
+
+\begin{instrucciones}
+Incluye los planos de ingeniería normalizados requeridos para fabricar, ensamblar, verificar o mantener la solución propuesta. Los planos deben ser legibles, estar rotulados, contener escala, unidades, tolerancias, material, nombre de pieza o conjunto, versión, fecha, autor y norma de dibujo técnico aplicada. Si el proyecto incluye varios subsistemas, organiza los planos por módulo mecánico, eléctrico, electrónico, neumático, hidráulico o de integración general.
+
+\vspace{2mm}
+\noindent \textbf{Contenido mínimo del Anexo A:}
+\begin{itemize}
+  \item Plano general del sistema o ensamble principal.
+  \item Planos de piezas críticas con dimensiones, tolerancias y material.
+  \item Diagramas eléctricos, electrónicos, de conexión, potencia, control e instrumentación, si aplica.
+  \item Diagramas de integración entre sensores, actuadores, controlador, fuentes y elementos de protección.
+  \item Rótulo normalizado con identificación del plano, escala, unidades, fecha, responsable y versión.
+  \item Referencia a la norma de dibujo técnico o documentación usada, por ejemplo ISO, IEC, ANSI, ASME o norma institucional aplicable.
+\end{itemize}
+
+\vspace{2mm}
+\noindent \textbf{Tabla de control sugerida:}
+
+\begin{tablaCentrada}
+\begingroup
+\scriptsize
+\setlength{\tabcolsep}{3pt}
+\renewcommand{\arraystretch}{1.25}
+\begin{tabularx}{\textwidth}{>{\raggedright\arraybackslash}p{0.18\textwidth}>{\raggedright\arraybackslash}X>{\raggedright\arraybackslash}p{0.18\textwidth}>{\raggedright\arraybackslash}p{0.14\textwidth}>{\raggedright\arraybackslash}p{0.14\textwidth}}
+\toprule
+  \tablaEncabezado
+  \tablaHeader{Código del plano}  & \tablaHeader{Nombre o descripción}  & \tablaHeader{Norma o formato}  & \tablaHeader{Versión}  & \tablaHeader{Estado} \\
+\midrule
+  A-01 & Plano general de ensamble. & & & Incluido / Pendiente \\
+  A-02 & Plano de pieza o subconjunto crítico. & & & Incluido / Pendiente \\
+  A-03 & Diagrama eléctrico o de conexiones. & & & Incluido / Pendiente \\
+\bottomrule
+\end{tabularx}
+\endgroup
+\end{tablaCentrada}
+
+\noindent \textbf{Nota de uso:} Inserta los planos completos después de esta tabla o reemplaza esta guía por los archivos exportados desde el software CAD/CAE/EDA correspondiente, asegurando que la resolución permita leer cotas, símbolos y rótulos.
+\end{instrucciones}
+
+\chapter{Códigos de programación fuente debidamente documentados y comentados}
+
+\begin{instrucciones}
+Incluye el código fuente desarrollado para el proyecto, debidamente organizado, documentado y comentado. El código debe permitir comprender la lógica de control, adquisición de datos, procesamiento, comunicación, interfaz o automatización implementada. Si el código es extenso, presenta en el anexo los archivos principales, enlaces a repositorios institucionales o una estructura de carpetas con descripción clara de cada módulo.
+
+\vspace{2mm}
+\noindent \textbf{Contenido mínimo del Anexo B:}
+\begin{itemize}
+  \item Nombre del lenguaje, entorno de desarrollo, versión del compilador, librerías y dependencias empleadas.
+  \item Estructura de archivos o módulos del proyecto de software.
+  \item Código fuente de los módulos principales con comentarios explicativos.
+  \item Descripción de entradas, salidas, variables críticas, parámetros de control y rutinas de seguridad.
+  \item Instrucciones de compilación, carga, ejecución, configuración y prueba del software.
+  \item Evidencia de documentación interna: encabezados de archivo, comentarios funcionales y explicación de funciones o bloques críticos.
+\end{itemize}
+
+\vspace{2mm}
+\noindent \textbf{Tabla de documentación sugerida:}
+
+\begin{tablaCentrada}
+\begingroup
+\scriptsize
+\setlength{\tabcolsep}{3pt}
+\renewcommand{\arraystretch}{1.25}
+\begin{tabularx}{\textwidth}{>{\raggedright\arraybackslash}p{0.22\textwidth}>{\raggedright\arraybackslash}X>{\raggedright\arraybackslash}X>{\raggedright\arraybackslash}p{0.16\textwidth}}
+\toprule
+  \tablaEncabezado
+  \tablaHeader{Archivo o módulo}  & \tablaHeader{Función dentro del sistema}  & \tablaHeader{Entradas y salidas principales}  & \tablaHeader{Estado} \\
+\midrule
+  Programa principal & Inicialización, ciclo de control y coordinación general. & & Incluido / Pendiente \\
+  Lectura de sensores & Adquisición, filtrado o calibración de variables medidas. & & Incluido / Pendiente \\
+  Control de actuadores & Generación de señales de control, PWM, salidas digitales o comandos. & & Incluido / Pendiente \\
+  Comunicación o interfaz & Envío de datos, recepción de comandos o visualización de estado. & & Incluido / Pendiente \\
+\bottomrule
+\end{tabularx}
+\endgroup
+\end{tablaCentrada}
+
+\noindent \textbf{Nota de uso:} Inserta fragmentos de código representativos o archivos completos en formato monoespaciado. Si se usa un repositorio, incluye el identificador institucional, versión o fecha de congelamiento del código para garantizar trazabilidad.
+
+\vspace{2mm}
+\begin{advertenciaABET}
+Todo proyecto que genere código fuente debe publicarlo en repositorio institucional o público (GitHub, GitLab o equivalente) con historial de commits activo durante el desarrollo. Incluir en este anexo: URL del repositorio y rama principal; fecha de congelamiento de la versión final entregada; y captura del historial de commits como evidencia de desarrollo progresivo. El historial de commits es evidencia de SO7 (aprendizaje continuo y autónomo).
+\end{advertenciaABET}
+
+\end{instrucciones}
+
+\chapter{Hojas de especificaciones simplificadas de actuadores y sensores críticos}
+
+\begin{instrucciones}
+Incluye hojas de especificaciones simplificadas de los actuadores, sensores, controladores o componentes críticos utilizados en el proyecto. Estas hojas deben resumir los parámetros necesarios para justificar la selección técnica del componente y deben estar alineadas con los cálculos, simulaciones, requerimientos y decisiones de diseño presentadas en el documento principal.
+
+\vspace{2mm}
+\noindent \textbf{Contenido mínimo del Anexo C:}
+\begin{itemize}
+  \item Nombre comercial, referencia, fabricante y función del componente dentro del sistema.
+  \item Parámetros eléctricos: voltaje, corriente, potencia, tipo de señal, consumo, protección o aislamiento, según aplique.
+  \item Parámetros mecánicos o físicos: dimensiones, masa, torque, velocidad, fuerza, rango, resolución, precisión o material, según el componente.
+  \item Condiciones ambientales: temperatura, humedad, grado de protección, vibración o restricciones de operación.
+  \item Diagrama de pines, conexiones principales o interfaz de comunicación.
+  \item Fuente del datasheet original: fabricante, URL, versión o fecha de consulta.
+\end{itemize}
+
+\vspace{2mm}
+\noindent \textbf{Tabla resumen sugerida:}
+
+\begin{tablaCentrada}
+\begingroup
+\scriptsize
+\setlength{\tabcolsep}{3pt}
+\renewcommand{\arraystretch}{1.25}
+\begin{tabularx}{\textwidth}{>{\raggedright\arraybackslash}p{0.18\textwidth}>{\raggedright\arraybackslash}p{0.18\textwidth}>{\raggedright\arraybackslash}X>{\raggedright\arraybackslash}X>{\raggedright\arraybackslash}p{0.16\textwidth}}
+\toprule
+  \tablaEncabezado
+  \tablaHeader{Componente crítico}  & \tablaHeader{Referencia / fabricante}  & \tablaHeader{Parámetros principales}  & \tablaHeader{Justificación de selección}  & \tablaHeader{Fuente} \\
+\midrule
+  Sensor principal & & Rango, resolución, precisión y tipo de salida. & & Datasheet / URL \\
+  Actuador principal & & Voltaje, corriente, potencia, torque, velocidad o fuerza. & & Datasheet / URL \\
+  Controlador o módulo crítico & & Entradas, salidas, comunicación, memoria o capacidad de procesamiento. & & Datasheet / URL \\
+\bottomrule
+\end{tabularx}
+\endgroup
+\end{tablaCentrada}
+
+\noindent \textbf{Nota de uso:} No es necesario copiar datasheets completos si son extensos. Resume únicamente la información crítica y conserva la referencia completa del documento original en el capítulo de referencias bibliográficas.
+\end{instrucciones}
+
+
+\chapter{Rúbrica de Evaluación por Student Outcomes ABET}
+
+\begin{instrucciones}
+Esta rúbrica organiza la evaluación del proyecto Capstone por Resultados del Estudiante ABET (SO1 a SO7). Cada descriptor debe calificarse con evidencias documentales del informe, anexos, prototipo, repositorio, sustentación y portafolio del curso.
+\end{instrucciones}
+
+\newcommand{\rubricaSO}[8]{%
+\begin{tablaCentrada}
+\begingroup
+\tiny
+\setlength{\tabcolsep}{2pt}
+\renewcommand{\arraystretch}{1.15}
+\begin{tabularx}{\textwidth}{>{\scriptsize\centering\arraybackslash}p{0.05\textwidth}>{\scriptsize\RaggedRight\arraybackslash}p{0.12\textwidth}>{\scriptsize\RaggedRight\arraybackslash}p{0.14\textwidth}>{\scriptsize\RaggedRight\arraybackslash}X>{\scriptsize\RaggedRight\arraybackslash}X>{\scriptsize\RaggedRight\arraybackslash}X>{\scriptsize\RaggedRight\arraybackslash}X>{\scriptsize\centering\arraybackslash}p{0.06\textwidth}}
+\toprule
+  \tablaEncabezado
+  \tablaHeader{SO} & \tablaHeader{Sección evaluada} & \tablaHeader{Criterio de desempeño} & \tablaHeader{Insatisfactorio (0--59)} & \tablaHeader{En desarrollo (60--74)} & \tablaHeader{Desarrollado (75--89)} & \tablaHeader{Ejemplar (90--100)} & \tablaHeader{Peso} \\
+\midrule
+  #1 & #2 & #3 & #4 & #5 & #6 & #7 & #8 \\
+\bottomrule
+\end{tabularx}
+\endgroup
+\end{tablaCentrada}%
+}
+
+\rubricaSO{SO1}{\S4.1}{Modelado físico-matemático y simulación}{Ecuaciones ausentes o incorrectas; no existe representación formal del sistema.}{Modelo parcial sin supuestos claros o sin relación verificable con el prototipo.}{Modelo coherente con supuestos, parámetros y simulación básica contrastada.}{Modelo validado experimentalmente con análisis de error y juicio de ingeniería sobre discrepancias.}{15\%}
+
+\rubricaSO{SO2}{\S1.6, \S4.2, \S4.4}{Diseño de ingeniería bajo restricciones reales}{Solución sin restricciones explícitas ni criterios de aceptación.}{Diseño con restricciones enunciadas pero no cuantificadas ni trazadas a decisiones.}{Diseño con requerimientos, restricciones y criterios de aceptación verificables.}{Diseño multidisciplinar con restricciones económicas, de seguridad y ambientales documentadas y cuantificadas.}{20\%}
+
+\rubricaSO{SO3}{Resumen, Abstract, \S4.2.4}{Comunicación técnica efectiva}{Resumen sin estructura técnica, lenguaje impreciso o ausencia de datos.}{Comunicación comprensible pero con datos incompletos, baja trazabilidad o errores de forma.}{Resumen, abstract y resultados claros, con estructura técnica y evidencias suficientes.}{Resumen y abstract con datos cuantitativos, estructura completa y lenguaje técnico preciso en español e inglés.}{10\%}
+
+\rubricaSO{SO4}{\S2.4, \S4.2.4}{Ética, estándares, riesgo e impacto}{Normas citadas sin aplicación ni análisis de riesgo.}{Riesgos o normas descritos de forma general, sin mitigaciones verificables.}{AMFE y análisis de impactos con mitigaciones razonables y normas aplicadas.}{AMFE diligenciado, mitigaciones implementadas en diseño, análisis de impacto ético con al menos 5 dimensiones cubiertas.}{15\%}
+
+\rubricaSO{SO5}{\S3.2, \S3.3}{Trabajo en equipo y gestión continua}{Roles no diferenciados y sin evidencia de planificación.}{Roles declarados pero con seguimiento débil o evidencia incompleta.}{Distribución de funciones, cronograma y reportes periódicos verificables.}{Distribución verificable con entregables individuales, coevaluación cuantitativa y evidencia de gestión continua del proyecto.}{10\%}
+
+\rubricaSO{SO6}{\S4.3}{Experimentación, análisis de datos y validación}{Pruebas sin protocolo formal ni criterios de aceptación.}{Ensayos básicos con bajo control de variables o análisis limitado.}{Protocolo de pruebas con mediciones repetidas, análisis de datos y comparación con requerimientos.}{Protocolo completo, análisis estadístico y comparación con requerimientos iniciales con criterios de aceptación cumplidos.}{20\%}
+
+\rubricaSO{SO7}{\S2.3, Anexo B}{Aprendizaje autónomo aplicado}{Tecnología aprendida sin evidencia de aplicación.}{Autoformación descrita pero no conectada con decisiones de diseño.}{Autoformación documentada y aplicada a una decisión técnica verificable.}{Autoformación documentada con decisión de diseño concreta derivada del nuevo conocimiento y evidencia en repositorio/bitácora.}{10\%}
+
+\begin{advertenciaABET}
+Esta rúbrica debe entregarse al estudiante junto con la plantilla al inicio del proyecto. El evaluador la diligencia de forma independiente antes de la sustentación oral.
+\end{advertenciaABET}
+
+\chapter*{Tabla de Control de Cambios}
+\addcontentsline{toc}{chapter}{Tabla de Control de Cambios}
+
+\begin{tablaCentrada}
+\begingroup
+\scriptsize
+\setlength{\tabcolsep}{2pt}
+\renewcommand{\arraystretch}{1.25}
+\begin{tabularx}{\textwidth}{>{\centering\arraybackslash}p{0.10\textwidth}>{\centering\arraybackslash}p{0.12\textwidth}>{\raggedright\arraybackslash}p{0.18\textwidth}>{\raggedright\arraybackslash}X>{\raggedright\arraybackslash}p{0.18\textwidth}>{\raggedright\arraybackslash}p{0.16\textwidth}}
+\toprule
+  \tablaEncabezado
+  \tablaHeader{Versión} & \tablaHeader{Fecha} & \tablaHeader{Sección modificada} & \tablaHeader{Descripción} & \tablaHeader{Fuente de la mejora} & \tablaHeader{Responsable} \\
+\midrule
+  FR-IEI-45-V4 & 09/06/2026 & Estructura general & Corrección de numeración de capítulos, actualización de encabezado institucional y fecha de vigencia. & Ambas fuentes & Comité curricular / asesor Capstone \\
+  FR-IEI-45-V4 & 09/06/2026 & Capítulo 1 & Inclusión de mapa SO--sección, requerimientos de diseño y advertencia ABET para proyectos no ingenieriles. & Ambas fuentes & Programa Ingeniería Mecatrónica \\
+  FR-IEI-45-V4 & 09/06/2026 & Capítulos 3 y 4 & Incorporación de seguimiento SO5, coevaluación, lazo cerrado, AMFE y matriz de responsabilidad profesional. & Par evaluador ABET & Equipo de actualización ABET \\
+  FR-IEI-45-V4 & 09/06/2026 & Anexos B y D & Repositorio obligatorio, rúbrica por Student Outcomes y trazabilidad de evaluación. & Revisión interna & Asesor académico IUB \\
+\bottomrule
+\end{tabularx}
+\endgroup
+\end{tablaCentrada}
+
+\end{document}

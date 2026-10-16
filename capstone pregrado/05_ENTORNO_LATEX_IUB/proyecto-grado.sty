@@ -1,0 +1,410 @@
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{proyecto-grado}[2026/06/09 Estilos para proyecto de grado v4]
+
+% Idioma y codificación
+\RequirePackage[spanish,es-tabla]{babel}
+\RequirePackage[T1]{fontenc}
+\RequirePackage[utf8]{inputenc}
+\RequirePackage{helvet}
+\renewcommand{\familydefault}{\sfdefault}
+
+% Formato general
+\RequirePackage{geometry}
+\RequirePackage{setspace}
+\RequirePackage{graphicx}
+\RequirePackage[table]{xcolor}
+\RequirePackage{array}
+\RequirePackage{booktabs}
+\RequirePackage{tabularx}
+\RequirePackage{longtable}
+\RequirePackage{multirow}
+\RequirePackage{enumitem}
+\RequirePackage{float}
+\RequirePackage{ragged2e}
+\RequirePackage{etoolbox}
+\RequirePackage{environ}
+\RequirePackage{fancyhdr}
+\RequirePackage{caption}
+\RequirePackage{eso-pic}
+\RequirePackage{lastpage}
+\RequirePackage{hyperref}
+
+\geometry{letterpaper, margin=1in}
+\onehalfspacing
+\setlength{\parindent}{1.25cm}
+\setlength{\parskip}{0.25\baselineskip}
+\setlength{\headheight}{15pt}
+\newcommand{\textoContenido}{\normalfont\normalsize}
+\AtBeginDocument{\textoContenido}
+
+\definecolor{colorinstitucional}{RGB}{20,58,110}
+\definecolor{iubamarillo}{HTML}{FCDF2C}
+\definecolor{iuboscuro}{HTML}{1A2239}
+\definecolor{iubblanco}{HTML}{FFFFFF}
+\definecolor{headerblue}{HTML}{000000}
+\definecolor{rowgray}{HTML}{EAF0F7}
+\colorlet{iubTablaEncabezado}{headerblue}
+\colorlet{iubTablaFila}{rowgray}
+\colorlet{iubTablaAlterna}{iubblanco}
+\colorlet{iubTablaRegla}{headerblue}
+\colorlet{iubTablaTextoEncabezado}{iubblanco}
+
+\hypersetup{
+  colorlinks=true,
+  linkcolor=colorinstitucional,
+  citecolor=colorinstitucional,
+  urlcolor=colorinstitucional,
+  pdfauthor={Autor del proyecto},
+  pdftitle={Proyecto de grado}
+}
+
+\captionsetup{
+  font=small,
+  labelfont=bf,
+  justification=centering
+}
+
+\makeatletter
+\newcommand{\pg@fuenteTabla}{\fontsize{9}{11}\selectfont}
+\DeclareCaptionFont{captionnine}{\pg@fuenteTabla}
+\DeclareCaptionFont{captionninebf}{\pg@fuenteTabla\bfseries}
+\captionsetup[table]{
+  position=bottom,
+  font=captionnine,
+  labelfont=captionninebf,
+  skip=4pt,
+  justification=raggedright,
+  singlelinecheck=false
+}
+
+\setlist[itemize]{topsep=0.25\baselineskip, itemsep=0.1\baselineskip}
+\setlist[enumerate]{topsep=0.25\baselineskip, itemsep=0.1\baselineskip}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\nouppercase{\leftmark}}
+\fancyfoot[C]{\thepage}
+\renewcommand{\headrulewidth}{0.4pt}
+
+\fancypagestyle{plain}{
+  \fancyhf{}
+  \fancyfoot[C]{\thepage}
+  \renewcommand{\headrulewidth}{0pt}
+}
+
+\newcommand{\tituloPreliminar}[1]{%
+  \chapter*{\MakeUppercase{#1}}%
+  \thispagestyle{empty}%
+}
+
+\makeatletter
+\def\@makechapterhead#1{%
+  \vspace*{3\baselineskip}%
+  {\parindent \z@ \centering \normalfont
+    \Huge\bfseries \thechapter\quad \MakeUppercase{#1}\par
+  }%
+  \vspace{1cm}%
+}
+
+\def\@makeschapterhead#1{%
+  \vspace*{3\baselineskip}%
+  {\parindent \z@ \centering \normalfont
+    \Huge\bfseries \MakeUppercase{#1}\par
+  }%
+  \vspace{1cm}%
+}
+
+\newcommand{\pg@universidad}{Nombre de la universidad}
+\newcommand{\pg@facultad}{Nombre de la facultad}
+\newcommand{\pg@programa}{Nombre del programa académico}
+\newcommand{\pg@titulo}{Título del proyecto de grado}
+\newcommand{\pg@autor}{Nombre del estudiante}
+\newcommand{\pg@autordos}{Nombre del segundo estudiante}
+\newcommand{\pg@codigo}{Código estudiantil}
+\newcommand{\pg@director}{Nombre del director}
+\newcommand{\pg@codirector}{}
+\newcommand{\pg@tituloacademico}{Título profesional al que se opta}
+\newcommand{\pg@ciudad}{Ciudad}
+\newcommand{\pg@fecha}{Año}
+\newcommand{\pg@logoportada}{logos/LOGOPORTADA}
+\newcommand{\pg@logoencabezado}{logos/LOGO IUB.png}
+\newif\ifpg@encabezadocapstone
+\pg@encabezadocapstonefalse
+
+\newcommand{\universidad}[1]{\renewcommand{\pg@universidad}{#1}}
+\newcommand{\facultad}[1]{\renewcommand{\pg@facultad}{#1}}
+\newcommand{\programa}[1]{\renewcommand{\pg@programa}{#1}}
+\newcommand{\tituloProyecto}[1]{\renewcommand{\pg@titulo}{#1}}
+\newcommand{\autorProyecto}[1]{\renewcommand{\pg@autor}{#1}}
+\newcommand{\autorDosProyecto}[1]{\renewcommand{\pg@autordos}{#1}}
+\newcommand{\codigoEstudiante}[1]{\renewcommand{\pg@codigo}{#1}}
+\newcommand{\directorProyecto}[1]{\renewcommand{\pg@director}{#1}}
+\newcommand{\codirectorProyecto}[1]{\renewcommand{\pg@codirector}{#1}}
+\newcommand{\tituloAcademico}[1]{\renewcommand{\pg@tituloacademico}{#1}}
+\newcommand{\ciudadProyecto}[1]{\renewcommand{\pg@ciudad}{#1}}
+\newcommand{\fechaProyecto}[1]{\renewcommand{\pg@fecha}{#1}}
+\newcommand{\logoPortada}[1]{\renewcommand{\pg@logoportada}{#1}}
+\newcommand{\logoEncabezado}[1]{\renewcommand{\pg@logoencabezado}{#1}}
+
+\newcommand{\thesistitle}{\pg@titulo}
+\newcommand{\thesisprogram}{\pg@programa}
+\newcommand{\thesisadvisor}{\pg@director}
+\newcommand{\thesisauthorone}{\pg@autor}
+\newcommand{\thesisauthortwo}{\pg@autordos}
+
+\newcommand{\insertarlogoportada}{
+  \IfFileExists{\pg@logoportada}{\includegraphics[height=2cm]{\pg@logoportada}}{
+    \IfFileExists{\pg@logoportada.pdf}{\includegraphics[height=2cm]{\pg@logoportada}}{
+      \IfFileExists{\pg@logoportada.png}{\includegraphics[height=2cm]{\pg@logoportada}}{
+        \IfFileExists{\pg@logoportada.PNG}{\includegraphics[height=2cm]{\pg@logoportada}}{
+          \IfFileExists{\pg@logoportada.jpg}{\includegraphics[height=2cm]{\pg@logoportada}}{
+            \IfFileExists{\pg@logoportada.JPG}{\includegraphics[height=2cm]{\pg@logoportada}}{
+              \IfFileExists{\pg@logoportada.jpeg}{\includegraphics[height=2cm]{\pg@logoportada}}{
+                \IfFileExists{\pg@logoportada.JPEG}{\includegraphics[height=2cm]{\pg@logoportada}}{
+                  \fbox{\parbox[c][2cm][c]{3.2cm}{\centering\small logoportada}}
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+\newcommand{\insertarlogoencabezado}{
+  \IfFileExists{\pg@logoencabezado}{\includegraphics[height=1.85cm]{\pg@logoencabezado}}{
+    \fbox{\parbox[c][1.85cm][c]{3cm}{\centering\small LOGO IUB}}
+  }
+}
+
+\newcommand{\encabezadoCapstone}{%
+  \begingroup
+  \pg@estiloTablasfalse
+  \color{black}%
+  \arrayrulecolor{black}%
+  \setlength{\tabcolsep}{0pt}%
+  \setlength{\arrayrulewidth}{0.4pt}%
+  \renewcommand{\arraystretch}{1.05}%
+  \begin{tabular}{|m{\dimexpr0.20\textwidth-\arrayrulewidth\relax}|m{\dimexpr0.60\textwidth-\arrayrulewidth\relax}|m{\dimexpr0.20\textwidth-2\arrayrulewidth\relax}|}
+    \hline
+    \centering\insertarlogoencabezado &
+    \centering{\bfseries PLANTILLA CAPSTONE DESIGN} &
+    \centering{\scriptsize\bfseries FR-IEI-45-V4\\Vigencia: 09/06/2026\\Pág. \thepage{} de \pageref{LastPage}}
+    \tabularnewline
+    \hline
+  \end{tabular}%
+  \endgroup
+}
+
+\AddToShipoutPictureFG{%
+  \ifpg@encabezadocapstone
+    \AtPageUpperLeft{%
+      \hspace*{1in}%
+      \raisebox{-\dimexpr0.25cm+\height\relax}[0pt][0pt]{\encabezadoCapstone}%
+    }%
+  \fi
+}
+
+\newcommand{\iniciarPaginasCapstone}{%
+  \clearpage
+  \newgeometry{left=1in, right=1in, top=\dimexpr1in+\baselineskip\relax, bottom=1in}%
+  \pagenumbering{arabic}%
+  \setcounter{page}{2}%
+  \pagestyle{empty}%
+  \pg@encabezadocapstonetrue
+}
+
+\newcommand{\portada}{
+  \begin{titlepage}
+    \thispagestyle{empty}
+    \AddToShipoutPictureFG*{%
+      \AtPageUpperLeft{%
+        \hspace*{1in}%
+        \raisebox{-4.5cm}[0pt][0pt]{\insertarlogoportada}%
+      }%
+    }%
+    \centering
+    \vspace*{5\baselineskip}
+    {{\Huge\bfseries\MakeUppercase{\pg@titulo}}\par}
+    \vspace*{5\baselineskip}
+    {{\Large\bfseries PRESENTADO POR:}\par}
+    \vspace*{0.5\baselineskip}
+    {{\Large\pg@autor}\par}
+    {{\Large\pg@autordos}\par}
+    \vspace*{5\baselineskip}
+    {{\Large\bfseries ASESOR(ES) TÉCNICO (S):}\par}
+    \vspace*{0.5\baselineskip}
+    {{\Large\pg@director}\par}
+    \vspace*{5\baselineskip}
+    {{\large\bfseries INGENIERÍA MECATRÓNICA}\par}
+    {{\large\bfseries FACULTAD DE INGENIERÍAS}\par}
+    {{\large\bfseries INSTITUCION UNIVERSITARIA DE BARRANQUILLA}\par}
+    {{\large\bfseries CIUDAD, FECHA}\par}
+  \end{titlepage}
+}
+
+
+\newif\ifpg@estiloTablas
+\pg@estiloTablastrue
+
+\newcommand{\pg@activarEstiloTablaInstitucional}{%
+  \ifpg@estiloTablas
+    \pg@fuenteTabla
+    \renewcommand{\arraystretch}{1.35}%
+    \arrayrulecolor{iubTablaRegla}%
+    \rowcolors{2}{iubTablaAlterna}{iubTablaFila}%
+  \fi
+}
+
+\newcommand{\pg@restaurarEstiloTablaInstitucional}{%
+  \ifpg@estiloTablas
+    \rowcolors{2}{}{}%
+    \arrayrulecolor{black}%
+  \fi
+}
+
+\AtBeginEnvironment{table}{\ifpg@estiloTablas\pg@fuenteTabla\fi}
+\AtBeginEnvironment{tabular}{\pg@activarEstiloTablaInstitucional}
+\AtBeginEnvironment{tabularx}{\pg@activarEstiloTablaInstitucional}
+\AtBeginEnvironment{longtable}{\pg@activarEstiloTablaInstitucional}
+\AtEndEnvironment{tabular}{\pg@restaurarEstiloTablaInstitucional}
+\AtEndEnvironment{tabularx}{\pg@restaurarEstiloTablaInstitucional}
+\AtEndEnvironment{longtable}{\pg@restaurarEstiloTablaInstitucional}
+\renewcommand{\arraystretch}{1.35}
+
+\newcommand{\tablaEncabezado}{\rowcolor{headerblue}}
+\newcommand{\tablaHeader}[1]{\textcolor{white}{\pg@fuenteTabla\bfseries #1}}
+
+\newenvironment{tablaCentrada}{%
+  \begingroup
+  \pg@activarEstiloTablaInstitucional
+  \begin{center}
+}{%
+  \end{center}
+  \pg@restaurarEstiloTablaInstitucional
+  \endgroup
+}
+
+% Tablas profesionales: usar booktabs, evitar líneas verticales y ajustar ancho con tabularx.
+\newcolumntype{P}[1]{>{\RaggedRight\arraybackslash}p{#1}}
+\newcolumntype{C}[1]{>{\centering\arraybackslash}p{#1}}
+\newcolumntype{L}[1]{>{\RaggedRight\arraybackslash}p{#1}}
+\newcolumntype{Y}{>{\RaggedRight\arraybackslash}X}
+\newcolumntype{Z}{>{\centering\arraybackslash}X}
+
+\newenvironment{tablaProfesional}[2]{%
+  \begin{table}[H]
+  \centering
+  \pg@fuenteTabla
+  \renewcommand{\arraystretch}{1.35}%
+  \caption{#1}%
+  \label{#2}%
+}{%
+  \end{table}
+}
+
+\NewEnviron{abtable}[2]{%
+  \begin{table}[H]
+  \centering
+  \pg@fuenteTabla
+  \renewcommand{\arraystretch}{1.35}%
+  \resizebox{\textwidth}{!}{\BODY}%
+  \caption{#1}%
+  \label{#2}%
+  \end{table}%
+}
+
+\newcommand{\tablaDeContenido}{%
+  \clearpage
+  \tituloPreliminar{Tabla de Contenido}
+  \addcontentsline{toc}{chapter}{Tabla de Contenido}%
+  \begingroup
+  \textoContenido
+  \@starttoc{toc}%
+  \endgroup
+}
+
+\newcommand{\listaDeIlustraciones}{%
+  \clearpage
+  \tituloPreliminar{Lista de Ilustraciones}
+  \addcontentsline{toc}{chapter}{Lista de Ilustraciones}%
+  \begingroup
+  \textoContenido
+  \@starttoc{lof}%
+  \endgroup
+}
+
+\newcommand{\listaDeTablas}{%
+  \clearpage
+  \tituloPreliminar{Lista de Tablas}
+  \addcontentsline{toc}{chapter}{Lista de Tablas}%
+  \begingroup
+  \textoContenido
+  \@starttoc{lot}%
+  \endgroup
+}
+
+\newenvironment{resumen}{
+  \clearpage
+  \tituloPreliminar{Resumen}
+  \addcontentsline{toc}{chapter}{Resumen}
+}{\clearpage}
+
+\newenvironment{instrucciones}{%
+  \begingroup
+  \normalfont\small
+  \color{red}%
+}{%
+  \endgroup
+}
+
+\newsavebox{\pg@advertenciabox}
+\newenvironment{advertenciaABET}{%
+  \par\vspace{2mm}%
+  \noindent\begingroup
+  \setlength{\fboxrule}{0.9pt}%
+  \setlength{\fboxsep}{6pt}%
+  \begin{lrbox}{\pg@advertenciabox}%
+  \begin{minipage}{0.94\linewidth}%
+  \color{red}\normalfont\small\bfseries
+}{%
+  \end{minipage}%
+  \end{lrbox}%
+  \fcolorbox{red}{iubamarillo!18}{\usebox{\pg@advertenciabox}}%
+  \par\vspace{2mm}\endgroup
+}
+
+\newenvironment{instruccionesresumen}{%
+  \begin{instrucciones}%
+}{%
+  \end{instrucciones}%
+}
+
+\newenvironment{instruccionesabstract}{%
+  \begin{instrucciones}%
+}{%
+  \end{instrucciones}%
+}
+
+\newenvironment{abstractpg}{
+  \tituloPreliminar{Abstract}
+  \addcontentsline{toc}{chapter}{Abstract}
+}{\clearpage}
+
+\newcommand{\palabrasclave}[1]{
+  \vspace{0.5cm}
+  \noindent\textbf{Palabras clave:} #1
+}
+
+\newcommand{\keywords}[1]{
+  \vspace{0.5cm}
+  \noindent\textbf{Keywords:} #1
+}
+
+\newcommand{\firma}[1]{
+  \vspace{1.2cm}
+  \noindent\rule{7cm}{0.4pt}\par
+  \noindent #1
+}
+\makeatother
